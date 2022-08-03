@@ -1,0 +1,63 @@
+See\+: \href{https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-2.html}{\texttt{ https\+://www.\+cs.\+usfca.\+edu/$\sim$mmalensek/cs326/assignments/project-\/2.\+html}} {\itshape Writer\+: Alex Hanson}
+
+University of San Francisco
+
+C\+S326 Operating Systems\hypertarget{index_autotoc_md1}{}\doxysection{About This Project\+:}\label{index_autotoc_md1}
+\begin{quote}
+The outermost layer of the operating system kernel is called the shell. In Unix-\/based systems, the shell is generally a command line interface. Most Linux distributions ship with bash as the default (there are several others\+: csh, ksh, sh, tcsh, zsh). In this project, what will be implementing is a shell. \end{quote}
+\hypertarget{index_autotoc_md2}{}\doxysection{Program options\+:}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Upon startup, the shell will print its prompt and wait for user input. The shell should be able to run commands in both the current directory and those in the }
+\DoxyCodeLine{PATH environment variable. Execvp was used to do this. To run a command in the current directory, you’ll need to prefix it with ./ as usual. If a command isn’t found, it prints an error message:}
+\end{DoxyCode}
+
+
+To compile and run\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+\DoxyCodeLine{./flash}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{Program Output}\label{index_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Command 417}
+\DoxyCodeLine{Command 418}
+\DoxyCodeLine{Command 419}
+\DoxyCodeLine{-\/-\/-\/-\/-\/}
+\DoxyCodeLine{background\_jobs.c    built\_in\_commands.o  history.c  prompt.c   redirection.c        scripting.h    signal\_handling.h   string\_functions.o  variable\_expansion.c}
+\DoxyCodeLine{background\_jobs.h    debug.h          history.h  prompt.h   redirection.h        shell.c        signal\_handling.o   test-\/output.md  variable\_expansion.h}
+\DoxyCodeLine{built\_in\_commands.c  docs         history.o  prompt.o   script\_commands.txt  shell.o        string\_functions.c  tests       working\_directory.c}
+\DoxyCodeLine{built\_in\_commands.h  flash        Makefile   README.md  scripting.c      signal\_handling.c  string\_functions.h  test.txt        working\_directory.h}
+\DoxyCodeLine{execvp: No such file or directory}
+\DoxyCodeLine{alhanson7210}
+\DoxyCodeLine{alhanson pts/0        2019-\/11-\/02 09:08 (192.168.122.1)}
+\DoxyCodeLine{execvp: No such file or directory}
+\DoxyCodeLine{-\/-\/-\/-\/-\/}
+\DoxyCodeLine{0 ls}
+\DoxyCodeLine{1 echo Command 388}
+\DoxyCodeLine{2 echo Command 389}
+\DoxyCodeLine{3 echo Command 390}
+\DoxyCodeLine{4 echo Command 391}
+\DoxyCodeLine{5 echo Command 392}
+\DoxyCodeLine{6 cat /etc/hostname}
+\DoxyCodeLine{7 echo Command 394}
+\DoxyCodeLine{8 echo Command 395}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysection{Testing}\label{index_autotoc_md4}
+To execute the test cases, use {\ttfamily make test}. To pull in updated test cases, run {\ttfamily make testupdate}. You can also run a specific test case instead of all of them\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Run all test cases:}
+\DoxyCodeLine{make test}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Run a specific test case:}
+\DoxyCodeLine{make test run=4}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Run a few specific test cases (4, 8, and 12 in this case):}
+\DoxyCodeLine{make test run='4 8 12'}
+\end{DoxyCode}
+ 

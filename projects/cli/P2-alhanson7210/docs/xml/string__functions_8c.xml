@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="string__functions_8c" kind="file" language="C++">
+    <compoundname>string_functions.c</compoundname>
+    <includes refid="string__functions_8h" local="yes">string_functions.h</includes>
+    <includes refid="debug_8h" local="yes">debug.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="9">
+        <label>debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>string_functions.c</label>
+        <link refid="string__functions_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string_functions.h</label>
+        <link refid="string__functions_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
+      </node>
+      <node id="3">
+        <label>signal.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="string__functions_8c_1ac3146f1e9227301bb4aa518f4d336cee" prot="public" static="no">
+        <name>BUFFERSIZE</name>
+        <initializer>64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="9" column="9" bodyfile="string_functions.c" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="string__functions_8c_1a8db90f3fa18fecca0c890f1d43437acc" prot="public" static="no">
+        <name>COMMANDSIZE</name>
+        <initializer>4096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="10" column="9" bodyfile="string_functions.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="string__functions_8c_1a36cc4e6b1ce708ed7492ae0979b10bf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* next_token</definition>
+        <argsstring>(char **str_ptr, const char *delim)</argsstring>
+        <name>next_token</name>
+        <param>
+          <type>char **</type>
+          <declname>str_ptr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the next token from a string.</para>
+<para>Parameters: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:maintains context in the string, i.e., where the next token in the string will be. If the function returns token N, then str_ptr will be updated to point to token N+1. To initialize, declare a char * that points to the string being tokenized. The pointer will be updated after each successive call to next_token.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:the set of characters to use as delimiters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns: char pointer to the next token in the string. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="26" column="6" bodyfile="string_functions.c" bodystart="26" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8c_1a6bbabf7089892c358ce039431b719ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* get_shell_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_shell_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return the name of the shell </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="67" column="7" bodyfile="string_functions.c" bodystart="67" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8c_1a7bd40c974db4adfacc04da6bf4048c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* get_shell_command</definition>
+        <argsstring>()</argsstring>
+        <name>get_shell_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get shell command </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="77" column="7" bodyfile="string_functions.c" bodystart="77" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8c_1a8229eeb94135e569abc255b314fe8d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* get_script_command</definition>
+        <argsstring>()</argsstring>
+        <name>get_script_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>get</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>script command from stdin </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="98" column="7" bodyfile="string_functions.c" bodystart="98" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8c_1ac1b2066a7f1bffe395dd6490abbc1fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char **</type>
+        <definition>char** command_tokenizer</definition>
+        <argsstring>(char *command, char *delimeter)</argsstring>
+        <name>command_tokenizer</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delimeter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command to be tokenized to run for execvp and the <ref refid="structcommand__line" kindref="compound">command_line</ref> struct </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimeter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tokenizing string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="125" column="7" bodyfile="string_functions.c" bodystart="125" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8c_1ac85d98fc2a9182c19800d71149e782f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int pipe_command_tokenizer</definition>
+        <argsstring>(char *command, char **pipe_buffer, char *delimeter)</argsstring>
+        <name>pipe_command_tokenizer</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>pipe_buffer</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delimeter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get line command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipe_buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pipe command tokenizer buffer of commands </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimeter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string tokenizer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.c" line="157" column="5" bodyfile="string_functions.c" bodystart="157" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="string__functions_8h" kindref="compound">string_functions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="debug_8h" kindref="compound">debug.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUFFERSIZE<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMANDSIZE<sp/>4096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="string__functions_8c_1a36cc4e6b1ce708ed7492ae0979b10bf5" kindref="member">next_token</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**str_ptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delim)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*str_ptr<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>tok_start<sp/>=<sp/>strspn(*str_ptr,<sp/>delim);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>tok_end<sp/>=<sp/>strcspn(*str_ptr<sp/>+<sp/>tok_start,<sp/>delim);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Zero<sp/>length<sp/>token.<sp/>We<sp/>must<sp/>be<sp/>finished.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tok_end<sp/><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str_ptr<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Take<sp/>note<sp/>of<sp/>the<sp/>start<sp/>of<sp/>the<sp/>current<sp/>token.<sp/>We&apos;ll<sp/>return<sp/>it<sp/>later.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*current_ptr<sp/>=<sp/>*str_ptr<sp/>+<sp/>tok_start;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Shift<sp/>pointer<sp/>forward<sp/>(to<sp/>the<sp/>end<sp/>of<sp/>the<sp/>current<sp/>token)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>*str_ptr<sp/>+=<sp/>tok_start<sp/>+<sp/>tok_end;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(**str_ptr<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>the<sp/>end<sp/>of<sp/>the<sp/>current<sp/>token<sp/>is<sp/>also<sp/>the<sp/>end<sp/>of<sp/>the<sp/>string,<sp/>we</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>must<sp/>be<sp/>at<sp/>the<sp/>last<sp/>token.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*str_ptr<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Replace<sp/>the<sp/>matching<sp/>delimiter<sp/>with<sp/>a<sp/>NUL<sp/>character<sp/>to<sp/>terminate<sp/>the</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>token<sp/>string.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>**str_ptr<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Shift<sp/>forward<sp/>one<sp/>character<sp/>over<sp/>the<sp/>newly-placed<sp/>NUL<sp/>so<sp/>that</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>next_pointer<sp/>now<sp/>points<sp/>at<sp/>the<sp/>first<sp/>character<sp/>of<sp/>the<sp/>next<sp/>token.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*str_ptr)++;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_ptr;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8c_1a6bbabf7089892c358ce039431b719ecc" kindref="member">get_shell_name</ref>()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>shellname[BUFFERSIZE]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;flash&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>shellname;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8c_1a7bd40c974db4adfacc04da6bf4048c50" kindref="member">get_shell_command</ref>()</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;Setting<sp/>up<sp/>command<sp/>entry\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line<sp/>=<sp/>NULL,<sp/>*nl<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>line_sz<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;Preparing<sp/>to<sp/>get<sp/>shell<sp/>command\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(&amp;line,<sp/>&amp;line_sz,<sp/>stdin);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(line_sz<sp/>&gt;<sp/>4095)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/>strdup(nl);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;command<sp/>was<sp/>over<sp/>4095\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;read<sp/>line<sp/>from<sp/>stdin:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>line);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8c_1a8229eeb94135e569abc255b314fe8d1d" kindref="member">get_script_command</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;Setting<sp/>up<sp/>command<sp/>entry\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*line<sp/>=<sp/>NULL,<sp/>*nl<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>line_sz<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;Preparing<sp/>to<sp/>get<sp/>shell<sp/>command\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(getline(&amp;line,<sp/>&amp;line_sz,<sp/>stdin)<sp/>==<sp/>-1)<sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(line);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;get<sp/>line<sp/>failed\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(line_sz<sp/>&gt;<sp/>4095)<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/>strdup(nl);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;command<sp/>was<sp/>over<sp/>4095\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;read<sp/>line<sp/>from<sp/>stdin:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>line);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/><ref refid="string__functions_8c_1ac1b2066a7f1bffe395dd6490abbc1fb4" kindref="member">command_tokenizer</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>command,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>delimeter)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;SETTING<sp/>VARIABLES\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tokens<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>tok<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tokenized[COMMANDSIZE]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>current_token<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>next_token_string[COMMANDSIZE]<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nxt<sp/>=<sp/>next_token_string;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;copying<sp/>command\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//strcpy(nxt,<sp/>command);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>nxt<sp/>=<sp/>strdup(command);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;strcpy<sp/>no<sp/>longer<sp/>failing\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((current_token<sp/>=<sp/><ref refid="string__functions_8c_1a36cc4e6b1ce708ed7492ae0979b10bf5" kindref="member">next_token</ref>(&amp;nxt,<sp/>delimeter))<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>tokens<sp/>&lt;<sp/>COMMANDSIZE)<sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;tokenized<sp/>command<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_token);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tokenized[tokens++]<sp/>=<sp/>strdup(current_token);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tokens<sp/>==<sp/>COMMANDSIZE)<sp/>tokenized[tokens-1]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>free(current_token);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//free(next_token_string);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>tok<sp/>=<sp/>tokenized;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tok;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="string__functions_8c_1ac85d98fc2a9182c19800d71149e782f5" kindref="member">pipe_command_tokenizer</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>command,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>pipe_buffer,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>delimeter)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;SETTING<sp/>VARIABLES\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tokens<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>current_token<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;copying<sp/>command\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//strcpy(nxt,<sp/>command);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nxt<sp/>=<sp/>strdup(command);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kindref="member">LOGP</ref>(</highlight><highlight class="stringliteral">&quot;strcpy<sp/>no<sp/>longer<sp/>failing\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((current_token<sp/>=<sp/><ref refid="string__functions_8c_1a36cc4e6b1ce708ed7492ae0979b10bf5" kindref="member">next_token</ref>(&amp;nxt,<sp/>delimeter))<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>tokens<sp/>&lt;<sp/>COMMANDSIZE)<sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;tokenized<sp/>command<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_token);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pipe_buffer[tokens++]<sp/>=<sp/>strdup(current_token);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tokens<sp/>==<sp/>COMMANDSIZE)<sp/>pipe_buffer[tokens-1]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>free(current_token);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>free(nxt);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//free(next_token_string);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tokens;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="string_functions.c"/>
+  </compounddef>
+</doxygen>

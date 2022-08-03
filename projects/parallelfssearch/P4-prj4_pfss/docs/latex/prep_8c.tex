@@ -1,0 +1,215 @@
+\hypertarget{prep_8c}{}\doxysection{prep.\+c File Reference}
+\label{prep_8c}\index{prep.c@{prep.c}}
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sysinfo.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{prep_8c_a369266c24eacffb87046522897a570d5}\label{prep_8c_a369266c24eacffb87046522897a570d5}} 
+\#define {\bfseries \+\_\+\+G\+N\+U\+\_\+\+S\+O\+U\+R\+CE}
+\item 
+\mbox{\Hypertarget{prep_8c_ae688d728e1acdfe5988c7db45d6f0166}\label{prep_8c_ae688d728e1acdfe5988c7db45d6f0166}} 
+\#define {\bfseries P\+A\+T\+H\+\_\+\+M\+AX}~4096
+\item 
+\mbox{\Hypertarget{prep_8c_a1d8ebb4914c8e217d861f811b9532c8e}\label{prep_8c_a1d8ebb4914c8e217d861f811b9532c8e}} 
+\#define {\bfseries F\+I\+L\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+M\+AX}~\+\_\+\+P\+O\+S\+I\+X\+\_\+\+A\+R\+G\+\_\+\+M\+AX
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prep_8c_a84365b0f701e1f4a7424d21046ae2d24}{print\+\_\+usage}} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em printing command usage usage \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{prep_8c_aea97d2b4430802af7266ce160d8a4bc1}{recurse\+\_\+directory}} (struct dirent $\ast$directory\+\_\+entry)
+\item 
+void $\ast$ \mbox{\hyperlink{prep_8c_a3e25a8ceb25b355820a7905b3eef171e}{thread\+\_\+parse\+\_\+file}} (void $\ast$search\+\_\+file)
+\item 
+char $\ast$ \mbox{\hyperlink{prep_8c_a1844b61eeb30d0067c46bb7831d344b6}{line\+\_\+parser}} (char $\ast$line, size\+\_\+t size)
+\item 
+bool \mbox{\hyperlink{prep_8c_a454def7cc2e88f4cb958e0ba2d075e2c}{case\+\_\+sensitivity\+\_\+matching}} (char $\ast$word)
+\item 
+char $\ast$ \mbox{\hyperlink{prep_8c_a93c6e70cda8e30ff145945bf40d9bbf0}{permission\+\_\+decyper}} (char $\ast$absolute\+\_\+path, struct dirent $\ast$entry)
+\item 
+void \mbox{\hyperlink{prep_8c_a2fe2381e1746d216d155846a1bd0c708}{print\+\_\+line\+\_\+diagnostics}} (char $\ast$absolute\+\_\+path, int line\+\_\+number, char $\ast$permissions, char $\ast$line)
+\item 
+char $\ast$ \mbox{\hyperlink{prep_8c_aa683e089745eb3fb604ed3b9026701ad}{next\+\_\+token}} (char $\ast$$\ast$str\+\_\+ptr, const char $\ast$delim)
+\item 
+char $\ast$ \mbox{\hyperlink{prep_8c_a9021f77ba2dc5d76889e9bf5d446818d}{strip\+\_\+line}} (char $\ast$line, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{prep_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em functionality mainframe \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{prep_8c_a951f2013d75f8111eccdeac318772223}\label{prep_8c_a951f2013d75f8111eccdeac318772223}} 
+char $\ast$ {\bfseries g\+\_\+search\+\_\+dir} = N\+U\+LL
+\item 
+\mbox{\Hypertarget{prep_8c_a2c4988137fce81b48cd55439099fea71}\label{prep_8c_a2c4988137fce81b48cd55439099fea71}} 
+bool {\bfseries g\+\_\+exact} = false
+\item 
+\mbox{\Hypertarget{prep_8c_a63892ddc1fc7686a214815e969ff6b2e}\label{prep_8c_a63892ddc1fc7686a214815e969ff6b2e}} 
+unsigned int {\bfseries g\+\_\+num\+\_\+terms} = 0
+\item 
+\mbox{\Hypertarget{prep_8c_a4f30c73d5f9c0beb8512ea9d524bac99}\label{prep_8c_a4f30c73d5f9c0beb8512ea9d524bac99}} 
+char $\ast$$\ast$ {\bfseries g\+\_\+search\+\_\+terms}
+\item 
+\mbox{\Hypertarget{prep_8c_aca68ebb9d327ec70320a6649153222ad}\label{prep_8c_aca68ebb9d327ec70320a6649153222ad}} 
+sem\+\_\+t {\bfseries main\+\_\+thread}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unix utility that recursively searches for matching words in text files, similar to the grep command (specifically with flags -\/Rnw). Only entire words are matched, not partial words (i.\+e., searching for \textquotesingle{}the\textquotesingle{} does not match \textquotesingle{}theme\textquotesingle{}). The line number where the matching search term was found is also printed.
+
+The tool makes use of multiple threads running in parallel to perform the search. Each file is searched by a separate thread. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prep_8c_a454def7cc2e88f4cb958e0ba2d075e2c}\label{prep_8c_a454def7cc2e88f4cb958e0ba2d075e2c}} 
+\index{prep.c@{prep.c}!case\_sensitivity\_matching@{case\_sensitivity\_matching}}
+\index{case\_sensitivity\_matching@{case\_sensitivity\_matching}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{case\_sensitivity\_matching()}{case\_sensitivity\_matching()}}
+{\footnotesize\ttfamily bool case\+\_\+sensitivity\+\_\+matching (\begin{DoxyParamCaption}\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_a1844b61eeb30d0067c46bb7831d344b6}\label{prep_8c_a1844b61eeb30d0067c46bb7831d344b6}} 
+\index{prep.c@{prep.c}!line\_parser@{line\_parser}}
+\index{line\_parser@{line\_parser}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{line\_parser()}{line\_parser()}}
+{\footnotesize\ttfamily char $\ast$ line\+\_\+parser (\begin{DoxyParamCaption}\item[{char $\ast$}]{line,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{prep_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{prep.c@{prep.c}!main@{main}}
+\index{main@{main}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+functionality mainframe 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_aa683e089745eb3fb604ed3b9026701ad}\label{prep_8c_aa683e089745eb3fb604ed3b9026701ad}} 
+\index{prep.c@{prep.c}!next\_token@{next\_token}}
+\index{next\_token@{next\_token}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{next\_token()}{next\_token()}}
+{\footnotesize\ttfamily char $\ast$ next\+\_\+token (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str\+\_\+ptr,  }\item[{const char $\ast$}]{delim }\end{DoxyParamCaption})}
+
+Retrieves the next token from a string.
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em str\+\_\+ptr} & \+:maintains context in the string, i.\+e., where the next token in the string will be. If the function returns token N, then str\+\_\+ptr will be updated to point to token N+1. To initialize, declare a char $\ast$ that points to the string being tokenized. The pointer will be updated after each successive call to next\+\_\+token.\\
+\hline
+{\em delim} & \+:the set of characters to use as delimiters\\
+\hline
+\end{DoxyParams}
+Returns\+: char pointer to the next token in the string. \mbox{\Hypertarget{prep_8c_a93c6e70cda8e30ff145945bf40d9bbf0}\label{prep_8c_a93c6e70cda8e30ff145945bf40d9bbf0}} 
+\index{prep.c@{prep.c}!permission\_decyper@{permission\_decyper}}
+\index{permission\_decyper@{permission\_decyper}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{permission\_decyper()}{permission\_decyper()}}
+{\footnotesize\ttfamily char $\ast$ permission\+\_\+decyper (\begin{DoxyParamCaption}\item[{char $\ast$}]{absolute\+\_\+path,  }\item[{struct dirent $\ast$}]{entry }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em absolute\+\_\+path} & \\
+\hline
+{\em entry} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_a2fe2381e1746d216d155846a1bd0c708}\label{prep_8c_a2fe2381e1746d216d155846a1bd0c708}} 
+\index{prep.c@{prep.c}!print\_line\_diagnostics@{print\_line\_diagnostics}}
+\index{print\_line\_diagnostics@{print\_line\_diagnostics}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{print\_line\_diagnostics()}{print\_line\_diagnostics()}}
+{\footnotesize\ttfamily void print\+\_\+line\+\_\+diagnostics (\begin{DoxyParamCaption}\item[{char $\ast$}]{absolute\+\_\+path,  }\item[{int}]{line\+\_\+number,  }\item[{char $\ast$}]{permissions,  }\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em absolute\+\_\+path} & \\
+\hline
+{\em line\+\_\+number} & \\
+\hline
+{\em permissions} & \\
+\hline
+{\em line} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_a84365b0f701e1f4a7424d21046ae2d24}\label{prep_8c_a84365b0f701e1f4a7424d21046ae2d24}} 
+\index{prep.c@{prep.c}!print\_usage@{print\_usage}}
+\index{print\_usage@{print\_usage}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{print\_usage()}{print\_usage()}}
+{\footnotesize\ttfamily void print\+\_\+usage (\begin{DoxyParamCaption}\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+printing command usage usage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & command line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_aea97d2b4430802af7266ce160d8a4bc1}\label{prep_8c_aea97d2b4430802af7266ce160d8a4bc1}} 
+\index{prep.c@{prep.c}!recurse\_directory@{recurse\_directory}}
+\index{recurse\_directory@{recurse\_directory}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{recurse\_directory()}{recurse\_directory()}}
+{\footnotesize\ttfamily void recurse\+\_\+directory (\begin{DoxyParamCaption}\item[{struct dirent $\ast$}]{directory\+\_\+entry }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory\+\_\+entry} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_a9021f77ba2dc5d76889e9bf5d446818d}\label{prep_8c_a9021f77ba2dc5d76889e9bf5d446818d}} 
+\index{prep.c@{prep.c}!strip\_line@{strip\_line}}
+\index{strip\_line@{strip\_line}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{strip\_line()}{strip\_line()}}
+{\footnotesize\ttfamily char $\ast$ strip\+\_\+line (\begin{DoxyParamCaption}\item[{char $\ast$}]{line,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prep_8c_a3e25a8ceb25b355820a7905b3eef171e}\label{prep_8c_a3e25a8ceb25b355820a7905b3eef171e}} 
+\index{prep.c@{prep.c}!thread\_parse\_file@{thread\_parse\_file}}
+\index{thread\_parse\_file@{thread\_parse\_file}!prep.c@{prep.c}}
+\doxysubsubsection{\texorpdfstring{thread\_parse\_file()}{thread\_parse\_file()}}
+{\footnotesize\ttfamily void $\ast$ thread\+\_\+parse\+\_\+file (\begin{DoxyParamCaption}\item[{void $\ast$}]{search\+\_\+file }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+\_\+file} & \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="working__directory_8c" kind="file" language="C++">
+    <compoundname>working_directory.c</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="working__directory_8c" kindref="compound">working_directory.c</ref> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+    </programlisting>
+    <location file="working_directory.c"/>
+  </compounddef>
+</doxygen>

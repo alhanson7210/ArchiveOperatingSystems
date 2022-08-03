@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="signal__handling_8h" kind="file" language="C++">
+    <compoundname>signal_handling.h</compoundname>
+    <includes local="no">signal.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includedby refid="shell_8c" local="yes">shell.c</includedby>
+    <includedby refid="signal__handling_8c" local="yes">signal_handling.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>signal_handling.h</label>
+        <link refid="signal__handling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+      <node id="2">
+        <label>signal.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>signal_handling.h</label>
+        <link refid="signal__handling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>shell.c</label>
+        <link refid="shell_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="signal__handling_8h_1a12f1280df7f570aba71e80f92c6030b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sigquithandler</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>sigquithandler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sig no</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.h" line="16" column="6" bodyfile="signal_handling.c" bodystart="14" bodyend="20" declfile="signal_handling.h" declline="16" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="signal__handling_8h_1a77c0764b89e1cbfbb1f84f90e543bddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sigusr1handler</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>sigusr1handler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sig no</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.h" line="21" column="6" bodyfile="signal_handling.c" bodystart="25" bodyend="32" declfile="signal_handling.h" declline="21" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="signal__handling_8h_1a7ebc86ed09e7f5b0c2283b6d623fd480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void siginthandler</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>siginthandler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sig no</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.h" line="26" column="6" bodyfile="signal_handling.c" bodystart="37" bodyend="47" declfile="signal_handling.h" declline="26" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="signal__handling_8h_1a381e36afdc09409374274eb435224b36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void create_signals</definition>
+        <argsstring>()</argsstring>
+        <name>create_signals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signals</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>create signals </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.h" line="31" column="6" bodyfile="signal_handling.c" bodystart="52" bodyend="57" declfile="signal_handling.h" declline="31" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#ifndef<sp/>_SIGNAL_HANDLING_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_SIGNAL_HANDLING_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a12f1280df7f570aba71e80f92c6030b6" kindref="member">sigquithandler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a77c0764b89e1cbfbb1f84f90e543bddb" kindref="member">sigusr1handler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a7ebc86ed09e7f5b0c2283b6d623fd480" kindref="member">siginthandler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a381e36afdc09409374274eb435224b36" kindref="member">create_signals</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="signal_handling.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,182 @@
+\hypertarget{allocator_8c}{}\doxysection{allocator.\+c File Reference}
+\label{allocator_8c}\index{allocator.c@{allocator.c}}
+
+
+To use (one specific command)\+: L\+D\+\_\+\+P\+R\+E\+L\+O\+AD=/allocator.so command (\textquotesingle{}command\textquotesingle{} will run with your allocator)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}allocator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{allocator_8c_a16e4f54f08fa2ef1574b413d64a94d44}{print\+\_\+memory}} (void)
+\begin{DoxyCompactList}\small\item\em Prints out the current memory state, including both the regions and blocks. Entries are printed in order, so there is an implied link from the topmost entry to the next, and so on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{allocator_8c_a22a50f56d0ca25cf15ae958e096a9776}{write\+\_\+memory}} (F\+I\+LE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Prints out the current memory state, including both the regions and blocks. Entries are printed in order, so there is an implied link from the topmost entry to the next, and so on. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{allocator_8c_a512132f6d325316860cc6ac6bf0a366c}{reuse}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em reuse returns the first memory region that the requested allocation size fits into -\/which includes the size fo the \mbox{\hyperlink{structmem__block}{mem\+\_\+block}} struct that will be split \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{allocator_8c_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em allocating memory from a given ammount of bytes given from size; returning the needed space via malloc\+\_\+name; it handles resizing over-\/allocated space, memory allocation of new memory, or returns N\+U\+LL if certain sizes are. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{allocator_8c_aec0d19cf0c75e35fef6e0c1248dc781e}{malloc\+\_\+name}} (size\+\_\+t size, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em To perform the allocation, place a metadata struct at the start of a free memory address and then return a pointer to the ‘data’ portion of the memory shown in the first figure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{allocator_8c_afbedc913aa4651b3c3b4b3aecd9b4711}{free}} (void $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em set usage to zero or unmap memory region \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{allocator_8c_a62b7798461bd461da64c5f9d35feddf7}{calloc}} (size\+\_\+t nmemb, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{allocator_8c_a62b7798461bd461da64c5f9d35feddf7}{calloc()}} function allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{allocator_8c_a1a6b5e8d2f1c37e5b43e4345586075be}{realloc}} (void $\ast$ptr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em memory block of memory sectioned out into chunks, new space within a region, or N\+U\+LL if there were any issues raised \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{allocator_8c_a4c9da321d9716d43277851380b746c06}\label{allocator_8c_a4c9da321d9716d43277851380b746c06}} 
+pthread\+\_\+mutex\+\_\+t {\bfseries thread\+\_\+safety} = P\+T\+H\+R\+E\+A\+D\+\_\+\+M\+U\+T\+E\+X\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ER
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+To use (one specific command)\+: L\+D\+\_\+\+P\+R\+E\+L\+O\+AD=/allocator.so command (\textquotesingle{}command\textquotesingle{} will run with your allocator) 
+
+Explores memory management at the C runtime level.
+
+To use (all following commands)\+: export L\+D\+\_\+\+P\+R\+E\+L\+O\+AD=/allocator.so (Everything after this point will use your custom allocator -- be careful!) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{allocator_8c_a62b7798461bd461da64c5f9d35feddf7}\label{allocator_8c_a62b7798461bd461da64c5f9d35feddf7}} 
+\index{allocator.c@{allocator.c}!calloc@{calloc}}
+\index{calloc@{calloc}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{calloc()}{calloc()}}
+{\footnotesize\ttfamily void$\ast$ calloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nmemb,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+The \mbox{\hyperlink{allocator_8c_a62b7798461bd461da64c5f9d35feddf7}{calloc()}} function allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory. 
+
+calloc will clear the memory and return N\+U\+LL if overflow occurs, 
+\begin{DoxyParams}{Parameters}
+{\em size} & requested allocation size \\
+\hline
+{\em nmemb} & elements of size bytes each and returns a pointer to the allocated memory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_afbedc913aa4651b3c3b4b3aecd9b4711}\label{allocator_8c_afbedc913aa4651b3c3b4b3aecd9b4711}} 
+\index{allocator.c@{allocator.c}!free@{free}}
+\index{free@{free}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily void free (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+set usage to zero or unmap memory region 
+
+The \mbox{\hyperlink{allocator_8c_afbedc913aa4651b3c3b4b3aecd9b4711}{free()}} function frees the memory space pointed to by ptr, which must have been returned by a previous call to \mbox{\hyperlink{allocator_8c_a7ac38fce3243a7dcf448301ee9ffd392}{malloc()}}, \mbox{\hyperlink{allocator_8c_a62b7798461bd461da64c5f9d35feddf7}{calloc()}}, or \mbox{\hyperlink{allocator_8c_a1a6b5e8d2f1c37e5b43e4345586075be}{realloc()}}. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & memory block pointed to by ptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_a7ac38fce3243a7dcf448301ee9ffd392}\label{allocator_8c_a7ac38fce3243a7dcf448301ee9ffd392}} 
+\index{allocator.c@{allocator.c}!malloc@{malloc}}
+\index{malloc@{malloc}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{malloc()}{malloc()}}
+{\footnotesize\ttfamily void$\ast$ malloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+allocating memory from a given ammount of bytes given from size; returning the needed space via malloc\+\_\+name; it handles resizing over-\/allocated space, memory allocation of new memory, or returns N\+U\+LL if certain sizes are. 
+
+malloc calls malloc\+\_\+name to allocate memory via mmap N\+O\+TE\+: an integer overflow would not be detected in malloc(nmemb $\ast$ size); 
+\begin{DoxyParams}{Parameters}
+{\em size} & requested allocation size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_aec0d19cf0c75e35fef6e0c1248dc781e}\label{allocator_8c_aec0d19cf0c75e35fef6e0c1248dc781e}} 
+\index{allocator.c@{allocator.c}!malloc\_name@{malloc\_name}}
+\index{malloc\_name@{malloc\_name}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{malloc\_name()}{malloc\_name()}}
+{\footnotesize\ttfamily void$\ast$ malloc\+\_\+name (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+To perform the allocation, place a metadata struct at the start of a free memory address and then return a pointer to the ‘data’ portion of the memory shown in the first figure. 
+
+Request new memory regions from the kernel via mmap 
+\begin{DoxyParams}{Parameters}
+{\em size} & requested allocation size \\
+\hline
+{\em name} & name of the allocated block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_a16e4f54f08fa2ef1574b413d64a94d44}\label{allocator_8c_a16e4f54f08fa2ef1574b413d64a94d44}} 
+\index{allocator.c@{allocator.c}!print\_memory@{print\_memory}}
+\index{print\_memory@{print\_memory}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{print\_memory()}{print\_memory()}}
+{\footnotesize\ttfamily void print\+\_\+memory (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prints out the current memory state, including both the regions and blocks. Entries are printed in order, so there is an implied link from the topmost entry to the next, and so on. 
+
+print\+\_\+memory prints the current memory state from our linked list of memory 
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_a1a6b5e8d2f1c37e5b43e4345586075be}\label{allocator_8c_a1a6b5e8d2f1c37e5b43e4345586075be}} 
+\index{allocator.c@{allocator.c}!realloc@{realloc}}
+\index{realloc@{realloc}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{realloc()}{realloc()}}
+{\footnotesize\ttfamily void$\ast$ realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+memory block of memory sectioned out into chunks, new space within a region, or N\+U\+LL if there were any issues raised 
+
+The \mbox{\hyperlink{allocator_8c_a1a6b5e8d2f1c37e5b43e4345586075be}{realloc()}} function changes the size of the memory block pointed to by ptr to size bytes. The contents will be unchanged in the range from the start of the region up to the minimum of the old and new sizes 
+\begin{DoxyParams}{Parameters}
+{\em size} & requested size \\
+\hline
+{\em ptr} & memory block pointed to by ptr \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_a512132f6d325316860cc6ac6bf0a366c}\label{allocator_8c_a512132f6d325316860cc6ac6bf0a366c}} 
+\index{allocator.c@{allocator.c}!reuse@{reuse}}
+\index{reuse@{reuse}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{reuse()}{reuse()}}
+{\footnotesize\ttfamily void$\ast$ reuse (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+reuse returns the first memory region that the requested allocation size fits into -\/which includes the size fo the \mbox{\hyperlink{structmem__block}{mem\+\_\+block}} struct that will be split 
+
+Resusing blocks of memory within our linked list of memory 
+\begin{DoxyParams}{Parameters}
+{\em size} & requested allocation size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{allocator_8c_a22a50f56d0ca25cf15ae958e096a9776}\label{allocator_8c_a22a50f56d0ca25cf15ae958e096a9776}} 
+\index{allocator.c@{allocator.c}!write\_memory@{write\_memory}}
+\index{write\_memory@{write\_memory}!allocator.c@{allocator.c}}
+\doxysubsubsection{\texorpdfstring{write\_memory()}{write\_memory()}}
+{\footnotesize\ttfamily void write\+\_\+memory (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Prints out the current memory state, including both the regions and blocks. Entries are printed in order, so there is an implied link from the topmost entry to the next, and so on. 
+
+write\+\_\+memory prints the current memory state from our linked list of memory without calling malloc 
+\begin{DoxyParams}{Parameters}
+{\em fp} & file pointer \\
+\hline
+\end{DoxyParams}

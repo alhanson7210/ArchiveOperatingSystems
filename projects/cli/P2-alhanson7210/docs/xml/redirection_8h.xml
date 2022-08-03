@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="redirection_8h" kind="file" language="C++">
+    <compoundname>redirection.h</compoundname>
+    <includes local="no">signal.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">sys/wait.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includedby refid="redirection_8c" local="yes">redirection.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>fcntl.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+      <node id="2">
+        <label>signal.h</label>
+      </node>
+      <node id="7">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="1">
+        <label>redirection.h</label>
+        <link refid="redirection_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>redirection.c</label>
+        <link refid="redirection_8c"/>
+      </node>
+      <node id="1">
+        <label>redirection.h</label>
+        <link refid="redirection_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structcommand__line" prot="public">command_line</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="redirection_8h_1a2aa1c4d6ebe65030391ec3c6bb4a11e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void execute_pipeline</definition>
+        <argsstring>(struct command_line *cmds)</argsstring>
+        <name>execute_pipeline</name>
+        <param>
+          <type>struct <ref refid="structcommand__line" kindref="compound">command_line</ref> *</type>
+          <declname>cmds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command line array for pipeline/redirection</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array of commands </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>TODO: design an algorithm that sets up a pipeline piece by piece. Solutions will probably either iterate over the pieces of the pipeline or work recursively. Imagine you have three commands in a pipeline:</para>
+<para><itemizedlist>
+<listitem><para>cat</para>
+</listitem><listitem><para>tr</para>
+</listitem><listitem><para>sed</para>
+</listitem></itemizedlist>
+</para>
+<para>Use &apos;stdout_pipe&apos; to determine when you&apos;ve reached the last command in the pipeline, and &apos;stdout_file&apos; to decide whether the final result gets written to a file or the terminal.</para>
+<para>If we aren&apos;t at the last command, then we need to set up a pipe for the current command&apos;s output to go into. For example, let&apos;s say our command is <computeroutput>cat file.txt</computeroutput>. We will create a pipe and have the stdout of the command directed to the pipe. Before running the next command, we&apos;ll set up the stdin of the next process to come from the pipe, and execute_pipeline will run whatever command comes next (for instance, <lsquo/>tr <rsquo/>[:upper:]&apos; &apos;[:lower:]&apos;`).</para>
+<para>Here&apos;s some pseudocode to help:</para>
+<para>create a new pipe fork a new process if pid is the child: dup2 stdout to pipe[1] close pipe[0] execvp the command if pid is the parent: dup2 stdin to pipe[0] close pipe[1] move on to the next command in the pipeline</para>
+<para>The special case here is when there are no more commands left. In that case, you can simply execvp the command (no need to create another pipe). If you created a handler process in <ref refid="shell_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kindref="member">main()</ref>, then it will be replaced by this last call to execvp.</para>
+        </inbodydescription>
+        <location file="redirection.h" line="27" column="6" bodyfile="redirection.c" bodystart="9" bodyend="137" declfile="redirection.h" declline="27" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#ifndef<sp/>_REDIRECTION_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_REDIRECTION_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/wait.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="structcommand__line" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcommand__line" kindref="compound">command_line</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**tokens;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>stdout_pipe;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*stdout_file;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="redirection_8h_1a2aa1c4d6ebe65030391ec3c6bb4a11e2" kindref="member">execute_pipeline</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structcommand__line" kindref="compound">command_line</ref><sp/>*<sp/>cmds);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="redirection.h"/>
+  </compounddef>
+</doxygen>

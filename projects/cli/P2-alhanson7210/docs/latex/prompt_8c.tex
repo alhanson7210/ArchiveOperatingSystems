@@ -1,0 +1,131 @@
+\hypertarget{prompt_8c}{}\doxysection{prompt.\+c File Reference}
+\label{prompt_8c}\index{prompt.c@{prompt.c}}
+
+
+prompt that prints the shell  
+
+
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}prompt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+functions.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{prompt_8c_aa9c8a939c2d31d6df304612e3e21d119}\label{prompt_8c_aa9c8a939c2d31d6df304612e3e21d119}} 
+\#define {\bfseries C\+O\+D\+ES}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{prompt_8c_afc5c187b2450146b0e4a23e25880d2f3}{print\+\_\+shell\+\_\+prompt}} (char $\ast$shellname, int exitcode)
+\item 
+void \mbox{\hyperlink{prompt_8c_ae06538b086d7b65c6a7914359b784075}{set\+Exit\+Code}} (bool nc)
+\item 
+bool \mbox{\hyperlink{prompt_8c_a2f1678a9daa287f607efb63e2c8f0494}{new\+Exit\+Code}} ()
+\item 
+void \mbox{\hyperlink{prompt_8c_a5264c4c8f06380867ad5162689fa2656}{increment\+\_\+cmd}} ()
+\item 
+unsigned int \mbox{\hyperlink{prompt_8c_a20c310f2c828010479b38e95238a5a80}{get\+\_\+cmd}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{prompt_8c_a87fafbb81f65c92b81efe08e3a2165be}\label{prompt_8c_a87fafbb81f65c92b81efe08e3a2165be}} 
+unsigned int {\bfseries C\+MD} = 0
+\item 
+\mbox{\Hypertarget{prompt_8c_af23edb2da0a1e809e6e4dcae8a252e61}\label{prompt_8c_af23edb2da0a1e809e6e4dcae8a252e61}} 
+bool {\bfseries new\+Code} = false
+\item 
+\mbox{\Hypertarget{prompt_8c_aada24ab0f5bbba555afe1420c16ac2f7}\label{prompt_8c_aada24ab0f5bbba555afe1420c16ac2f7}} 
+char {\bfseries hostname} \mbox{[}H\+O\+S\+T\+\_\+\+N\+A\+M\+E\+\_\+\+M\+AX\mbox{]} = \{0\}
+\item 
+\mbox{\Hypertarget{prompt_8c_abc99aa2957ed9b8ef43bcbec1dc6e11f}\label{prompt_8c_abc99aa2957ed9b8ef43bcbec1dc6e11f}} 
+char $\ast$ {\bfseries login} = N\+U\+LL
+\item 
+\mbox{\Hypertarget{prompt_8c_a7599d8f4861436650265e6cac2de7dd9}\label{prompt_8c_a7599d8f4861436650265e6cac2de7dd9}} 
+const char $\ast$ {\bfseries tilda} = \char`\"{}$\sim$\char`\"{}
+\item 
+char {\bfseries codes} \mbox{[}$\,$\mbox{]}\mbox{[}C\+O\+D\+ES\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+prompt that prints the shell 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prompt_8c_a20c310f2c828010479b38e95238a5a80}\label{prompt_8c_a20c310f2c828010479b38e95238a5a80}} 
+\index{prompt.c@{prompt.c}!get\_cmd@{get\_cmd}}
+\index{get\_cmd@{get\_cmd}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{get\_cmd()}{get\_cmd()}}
+{\footnotesize\ttfamily unsigned int get\+\_\+cmd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & command number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prompt_8c_a5264c4c8f06380867ad5162689fa2656}\label{prompt_8c_a5264c4c8f06380867ad5162689fa2656}} 
+\index{prompt.c@{prompt.c}!increment\_cmd@{increment\_cmd}}
+\index{increment\_cmd@{increment\_cmd}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{increment\_cmd()}{increment\_cmd()}}
+{\footnotesize\ttfamily void increment\+\_\+cmd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & incremenet command number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prompt_8c_a2f1678a9daa287f607efb63e2c8f0494}\label{prompt_8c_a2f1678a9daa287f607efb63e2c8f0494}} 
+\index{prompt.c@{prompt.c}!newExitCode@{newExitCode}}
+\index{newExitCode@{newExitCode}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{newExitCode()}{newExitCode()}}
+{\footnotesize\ttfamily bool new\+Exit\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & new exit code? \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prompt_8c_afc5c187b2450146b0e4a23e25880d2f3}\label{prompt_8c_afc5c187b2450146b0e4a23e25880d2f3}} 
+\index{prompt.c@{prompt.c}!print\_shell\_prompt@{print\_shell\_prompt}}
+\index{print\_shell\_prompt@{print\_shell\_prompt}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{print\_shell\_prompt()}{print\_shell\_prompt()}}
+{\footnotesize\ttfamily void print\+\_\+shell\+\_\+prompt (\begin{DoxyParamCaption}\item[{char $\ast$}]{shellname,  }\item[{int}]{exitcode }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shellname} & its your shellname \\
+\hline
+{\em exitcode} & error code \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{prompt_8c_ae06538b086d7b65c6a7914359b784075}\label{prompt_8c_ae06538b086d7b65c6a7914359b784075}} 
+\index{prompt.c@{prompt.c}!setExitCode@{setExitCode}}
+\index{setExitCode@{setExitCode}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{setExitCode()}{setExitCode()}}
+{\footnotesize\ttfamily void set\+Exit\+Code (\begin{DoxyParamCaption}\item[{bool}]{nc }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em nc} & new code \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{prompt_8c_a103c8ca9b794f9eb4cf0e1b84a7e01a7}\label{prompt_8c_a103c8ca9b794f9eb4cf0e1b84a7e01a7}} 
+\index{prompt.c@{prompt.c}!codes@{codes}}
+\index{codes@{codes}!prompt.c@{prompt.c}}
+\doxysubsubsection{\texorpdfstring{codes}{codes}}
+{\footnotesize\ttfamily char codes\mbox{[}$\,$\mbox{]}\mbox{[}C\+O\+D\+ES\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \{ 0xf0, 0x9f, 0x98, 0x8e, 0\},}
+\DoxyCodeLine{    \{ 0xE2, 0x9C, 0x8B, 0xF0, 0x9F, 0x8F, 0xBE\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Project<sp/>4:<sp/>Parallel<sp/>File<sp/>System<sp/>Search</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>project<sp/>description<sp/>here:<sp/>https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-4.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Writer:<sp/>Alex<sp/>Hanson*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">University<sp/>of<sp/>San<sp/>Francisco</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CS<sp/>326<sp/>Operating<sp/>Systems</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>About<sp/>This<sp/>Project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Test<sp/>Output</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./tests/run_tests</highlight></codeline>
+<codeline><highlight class="normal">Running<sp/>Tests:<sp/>(v8)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>01<sp/>Arguments<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>02<sp/>Invalid<sp/>Thread<sp/>Count<sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>03<sp/>Invalid<sp/>Directory<sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>04<sp/>Basic<sp/>Search<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>05<sp/>Many<sp/>Terms<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>06<sp/>Whitespace<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/>FAIL<sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>07<sp/>Thread<sp/>Performance<sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>08<sp/>Exact<sp/>Match<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>09<sp/>Local<sp/>Filesystem<sp/><sp/><sp/><sp/><sp/>[2<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>10<sp/>Thread<sp/>Count<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[2<sp/>pts]<sp/><sp/>[<sp/>FAIL<sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>11<sp/>Static<sp/>Analysis<sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>12<sp/>Documentation<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>13<sp/>Leak<sp/>Check<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal">Execution<sp/>complete.<sp/>[12/15<sp/>pts]<sp/>(80.0%)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

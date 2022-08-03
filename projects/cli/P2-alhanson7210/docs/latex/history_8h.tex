@@ -1,0 +1,177 @@
+\hypertarget{history_8h}{}\doxysection{history.\+h File Reference}
+\label{history_8h}\index{history.h@{history.h}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structhistory__entry}{history\+\_\+entry}}
+\begin{DoxyCompactList}\small\item\em history entry \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structhistory__container}{history\+\_\+container}}
+\begin{DoxyCompactList}\small\item\em history container \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{history_8h_a9a2f1621bf644fcac0c99b80f9492942}\label{history_8h_a9a2f1621bf644fcac0c99b80f9492942}} 
+\#define {\bfseries H\+I\+S\+T\+\_\+\+M\+AX}~100
+\item 
+\mbox{\Hypertarget{history_8h_a87738054f9a89f0ac29c6ee1fb7da08d}\label{history_8h_a87738054f9a89f0ac29c6ee1fb7da08d}} 
+\#define {\bfseries C\+O\+M\+M\+A\+N\+D\+\_\+\+S\+I\+ZE}~4096
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{history_8h_a5e443eede2ecfe4e481323d5720c29ce}{run\+\_\+command\+\_\+id}} (int cmd)
+\item 
+int \mbox{\hyperlink{history_8h_a62a2e543c8465ebc8703b51f5f524230}{run\+\_\+prefix\+\_\+command}} (char $\ast$prefix)
+\item 
+void \mbox{\hyperlink{history_8h_ae83222ccb1ce0364687ffcfa7ccc9165}{run\+\_\+last\+\_\+history\+\_\+command}} ()
+\item 
+struct \mbox{\hyperlink{structhistory__entry}{history\+\_\+entry}} $\ast$ \mbox{\hyperlink{history_8h_a729b6b40a26723869b3eae734031262d}{get\+\_\+entry}} (unsigned int id)
+\item 
+void \mbox{\hyperlink{history_8h_ad5f38cfc6e4eefba99cec6ed43736529}{set\+\_\+entry}} (int id\+\_\+idx)
+\item 
+int \mbox{\hyperlink{history_8h_a2f2ebc3133789214dfe1abb847aacdfb}{find\+\_\+entry\+\_\+idx}} (unsigned int id)
+\item 
+void \mbox{\hyperlink{history_8h_a3cad18c7fe07d48e4a16fbb6386c6b81}{create\+\_\+history\+\_\+log}} ()
+\item 
+void \mbox{\hyperlink{history_8h_a48f33865ecf0642bb0cda24f5dcd2999}{print\+\_\+history}} ()
+\item 
+void \mbox{\hyperlink{history_8h_a4ceaa0f5c4a7c3129f380bc9324b778e}{shift\+\_\+entries}} ()
+\item 
+void \mbox{\hyperlink{history_8h_aae35c2dac5bf079545141c91002135a9}{add\+\_\+entry}} (unsigned int command\+\_\+number, char $\ast$user\+\_\+command)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{history_8h}{history.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{history_8h_aae35c2dac5bf079545141c91002135a9}\label{history_8h_aae35c2dac5bf079545141c91002135a9}} 
+\index{history.h@{history.h}!add\_entry@{add\_entry}}
+\index{add\_entry@{add\_entry}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{add\_entry()}{add\_entry()}}
+{\footnotesize\ttfamily void add\+\_\+entry (\begin{DoxyParamCaption}\item[{unsigned int}]{command\+\_\+number,  }\item[{char $\ast$}]{user\+\_\+command }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+\_\+number} & command number \\
+\hline
+{\em shell} & command\\
+\hline
+{\em command\+\_\+number} & the id of the command \\
+\hline
+{\em user\+\_\+command} & get line command \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a3cad18c7fe07d48e4a16fbb6386c6b81}\label{history_8h_a3cad18c7fe07d48e4a16fbb6386c6b81}} 
+\index{history.h@{history.h}!create\_history\_log@{create\_history\_log}}
+\index{create\_history\_log@{create\_history\_log}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{create\_history\_log()}{create\_history\_log()}}
+{\footnotesize\ttfamily void create\+\_\+history\+\_\+log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & initialization\\
+\hline
+{\em void} & create history \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a2f2ebc3133789214dfe1abb847aacdfb}\label{history_8h_a2f2ebc3133789214dfe1abb847aacdfb}} 
+\index{history.h@{history.h}!find\_entry\_idx@{find\_entry\_idx}}
+\index{find\_entry\_idx@{find\_entry\_idx}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{find\_entry\_idx()}{find\_entry\_idx()}}
+{\footnotesize\ttfamily int find\+\_\+entry\+\_\+idx (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & find command\\
+\hline
+{\em id} & command id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a729b6b40a26723869b3eae734031262d}\label{history_8h_a729b6b40a26723869b3eae734031262d}} 
+\index{history.h@{history.h}!get\_entry@{get\_entry}}
+\index{get\_entry@{get\_entry}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{get\_entry()}{get\_entry()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structhistory__entry}{history\+\_\+entry}}$\ast$ get\+\_\+entry (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & command id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a48f33865ecf0642bb0cda24f5dcd2999}\label{history_8h_a48f33865ecf0642bb0cda24f5dcd2999}} 
+\index{history.h@{history.h}!print\_history@{print\_history}}
+\index{print\_history@{print\_history}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{print\_history()}{print\_history()}}
+{\footnotesize\ttfamily void print\+\_\+history (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & print history \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a5e443eede2ecfe4e481323d5720c29ce}\label{history_8h_a5e443eede2ecfe4e481323d5720c29ce}} 
+\index{history.h@{history.h}!run\_command\_id@{run\_command\_id}}
+\index{run\_command\_id@{run\_command\_id}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{run\_command\_id()}{run\_command\_id()}}
+{\footnotesize\ttfamily void run\+\_\+command\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{cmd }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & cmd in index\\
+\hline
+{\em cmd} & print commmand \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_ae83222ccb1ce0364687ffcfa7ccc9165}\label{history_8h_ae83222ccb1ce0364687ffcfa7ccc9165}} 
+\index{history.h@{history.h}!run\_last\_history\_command@{run\_last\_history\_command}}
+\index{run\_last\_history\_command@{run\_last\_history\_command}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{run\_last\_history\_command()}{run\_last\_history\_command()}}
+{\footnotesize\ttfamily void run\+\_\+last\+\_\+history\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & !!\\
+\hline
+{\em void} & printing the history \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a62a2e543c8465ebc8703b51f5f524230}\label{history_8h_a62a2e543c8465ebc8703b51f5f524230}} 
+\index{history.h@{history.h}!run\_prefix\_command@{run\_prefix\_command}}
+\index{run\_prefix\_command@{run\_prefix\_command}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{run\_prefix\_command()}{run\_prefix\_command()}}
+{\footnotesize\ttfamily int run\+\_\+prefix\+\_\+command (\begin{DoxyParamCaption}\item[{char $\ast$}]{prefix }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & char prefix to check in history from the head to the tail\\
+\hline
+{\em prefix} & running the prefix bang command \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_ad5f38cfc6e4eefba99cec6ed43736529}\label{history_8h_ad5f38cfc6e4eefba99cec6ed43736529}} 
+\index{history.h@{history.h}!set\_entry@{set\_entry}}
+\index{set\_entry@{set\_entry}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{set\_entry()}{set\_entry()}}
+{\footnotesize\ttfamily void set\+\_\+entry (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+idx }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+idx} & set index\\
+\hline
+{\em id\+\_\+idx} & set index in history to a specific value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{history_8h_a4ceaa0f5c4a7c3129f380bc9324b778e}\label{history_8h_a4ceaa0f5c4a7c3129f380bc9324b778e}} 
+\index{history.h@{history.h}!shift\_entries@{shift\_entries}}
+\index{shift\_entries@{shift\_entries}!history.h@{history.h}}
+\doxysubsubsection{\texorpdfstring{shift\_entries()}{shift\_entries()}}
+{\footnotesize\ttfamily void shift\+\_\+entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+{\em void} & shift entries based off of min \\
+\hline
+\end{DoxyParams}

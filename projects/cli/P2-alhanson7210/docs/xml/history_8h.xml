@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="history_8h" kind="file" language="C++">
+    <compoundname>history.h</compoundname>
+    <includedby refid="built__in__commands_8c" local="yes">built_in_commands.c</includedby>
+    <includedby refid="history_8c" local="yes">history.c</includedby>
+    <includedby refid="shell_8c" local="yes">shell.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>built_in_commands.c</label>
+        <link refid="built__in__commands_8c"/>
+      </node>
+      <node id="4">
+        <label>shell.c</label>
+        <link refid="shell_8c"/>
+      </node>
+      <node id="3">
+        <label>history.c</label>
+        <link refid="history_8c"/>
+      </node>
+      <node id="1">
+        <label>history.h</label>
+        <link refid="history_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structhistory__entry" prot="public">history_entry</innerclass>
+    <innerclass refid="structhistory__container" prot="public">history_container</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="history_8h_1a9a2f1621bf644fcac0c99b80f9492942" prot="public" static="no">
+        <name>HIST_MAX</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="8" column="9" bodyfile="history.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="history_8h_1a87738054f9a89f0ac29c6ee1fb7da08d" prot="public" static="no">
+        <name>COMMAND_SIZE</name>
+        <initializer>4096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="9" column="9" bodyfile="history.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="history_8h_1a5e443eede2ecfe4e481323d5720c29ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void run_command_id</definition>
+        <argsstring>(int cmd)</argsstring>
+        <name>run_command_id</name>
+        <param>
+          <type>int</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>cmd in index</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>print commmand </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="34" column="6" bodyfile="history.c" bodystart="63" bodyend="114" declfile="history.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1a62a2e543c8465ebc8703b51f5f524230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int run_prefix_command</definition>
+        <argsstring>(char *prefix)</argsstring>
+        <name>run_prefix_command</name>
+        <param>
+          <type>char *</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>char prefix to check in history from the head to the tail</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>running the prefix bang command </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="39" column="5" bodyfile="history.c" bodystart="17" bodyend="58" declfile="history.h" declline="39" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1ae83222ccb1ce0364687ffcfa7ccc9165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void run_last_history_command</definition>
+        <argsstring>()</argsstring>
+        <name>run_last_history_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>!!</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>printing the history </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="44" column="6" bodyfile="history.c" bodystart="119" bodyend="131" declfile="history.h" declline="44" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1a729b6b40a26723869b3eae734031262d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="structhistory__entry" kindref="compound">history_entry</ref> *</type>
+        <definition>struct history_entry* get_entry</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>get_entry</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="49" column="21" bodyfile="history.c" bodystart="183" bodyend="191" declfile="history.h" declline="49" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1ad5f38cfc6e4eefba99cec6ed43736529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void set_entry</definition>
+        <argsstring>(int id_idx)</argsstring>
+        <name>set_entry</name>
+        <param>
+          <type>int</type>
+          <declname>id_idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id_idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set index</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id_idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set index in history to a specific value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="54" column="6" bodyfile="history.c" bodystart="196" bodyend="200" declfile="history.h" declline="54" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1a2f2ebc3133789214dfe1abb847aacdfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int find_entry_idx</definition>
+        <argsstring>(unsigned int id)</argsstring>
+        <name>find_entry_idx</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>find command</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command id </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="59" column="5" bodyfile="history.c" bodystart="205" bodyend="208" declfile="history.h" declline="59" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1a3cad18c7fe07d48e4a16fbb6386c6b81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void create_history_log</definition>
+        <argsstring>()</argsstring>
+        <name>create_history_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>initialization</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>create history </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="64" column="6" bodyfile="history.c" bodystart="213" bodyend="221" declfile="history.h" declline="64" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1a48f33865ecf0642bb0cda24f5dcd2999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_history</definition>
+        <argsstring>()</argsstring>
+        <name>print_history</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>print history </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="69" column="6" bodyfile="history.c" bodystart="136" bodyend="161" declfile="history.h" declline="69" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1a4ceaa0f5c4a7c3129f380bc9324b778e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void shift_entries</definition>
+        <argsstring>()</argsstring>
+        <name>shift_entries</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>shift entries based off of min </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="74" column="6" bodyfile="history.c" bodystart="226" bodyend="229" declfile="history.h" declline="74" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="history_8h_1aae35c2dac5bf079545141c91002135a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void add_entry</definition>
+        <argsstring>(unsigned int command_number, char *user_command)</argsstring>
+        <name>add_entry</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>command_number</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>user_command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shell</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>command_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id of the command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get line command </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="80" column="6" bodyfile="history.c" bodystart="235" bodyend="253" declfile="history.h" declline="80" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="history_8h" kindref="compound">history.h</ref> </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#ifndef<sp/>_HISTORY_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_HISTORY_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HIST_MAX<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMAND_SIZE<sp/>4096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="structhistory__entry" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhistory__entry" kindref="compound">history_entry</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd_id;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>What<sp/>else<sp/>do<sp/>we<sp/>need<sp/>here?<sp/>Note:<sp/>you<sp/>aren&apos;t<sp/>required<sp/>to<sp/>use<sp/>this<sp/>struct,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>it<sp/>is<sp/>only<sp/>here<sp/>for<sp/>demonstration<sp/>purposes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>command[COMMAND_SIZE];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structhistory__container" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhistory__container" kindref="compound">history_container</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>entry_count;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>head;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tail;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>min;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhistory__entry" kindref="compound">history_entry</ref><sp/>list[HIST_MAX];</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1a5e443eede2ecfe4e481323d5720c29ce" kindref="member">run_command_id</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="history_8h_1a62a2e543c8465ebc8703b51f5f524230" kindref="member">run_prefix_command</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>prefix);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1ae83222ccb1ce0364687ffcfa7ccc9165" kindref="member">run_last_history_command</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhistory__entry" kindref="compound">history_entry</ref><sp/>*<sp/><ref refid="history_8h_1a729b6b40a26723869b3eae734031262d" kindref="member">get_entry</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1ad5f38cfc6e4eefba99cec6ed43736529" kindref="member">set_entry</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>id_idx);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="history_8h_1a2f2ebc3133789214dfe1abb847aacdfb" kindref="member">find_entry_idx</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1a3cad18c7fe07d48e4a16fbb6386c6b81" kindref="member">create_history_log</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1a48f33865ecf0642bb0cda24f5dcd2999" kindref="member">print_history</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1a4ceaa0f5c4a7c3129f380bc9324b778e" kindref="member">shift_entries</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="history_8h_1aae35c2dac5bf079545141c91002135a9" kindref="member">add_entry</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>command_number,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>user_command);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="history.h"/>
+  </compounddef>
+</doxygen>

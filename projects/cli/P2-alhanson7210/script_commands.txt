@@ -1,0 +1,12 @@
+ls
+echo hello
+strace ls
+ps
+history
+!!
+ls -l -a
+!1
+!0
+!3
+clear
+!9

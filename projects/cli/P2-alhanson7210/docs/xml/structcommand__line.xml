@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structcommand__line" kind="struct" language="C++" prot="public">
+    <compoundname>command_line</compoundname>
+    <includes refid="redirection_8h" local="no">redirection.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcommand__line_1a52e5481c7442ec614f2cf19c281668e3" prot="public" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** command_line::tokens</definition>
+        <argsstring></argsstring>
+        <name>tokens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="redirection.h" line="19" column="10" bodyfile="redirection.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcommand__line_1ac35a3b63e08d29c8c1b0673eb9709f90" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool command_line::stdout_pipe</definition>
+        <argsstring></argsstring>
+        <name>stdout_pipe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="redirection.h" line="20" column="10" bodyfile="redirection.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcommand__line_1a88de722aec2e9fdc3555d1392dda7533" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* command_line::stdout_file</definition>
+        <argsstring></argsstring>
+        <name>stdout_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="redirection.h" line="21" column="10" bodyfile="redirection.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>command line struct </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="redirection.h" line="18" column="19" bodyfile="redirection.h" bodystart="18" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structcommand__line_1a88de722aec2e9fdc3555d1392dda7533" prot="public" virt="non-virtual"><scope>command_line</scope><name>stdout_file</name></member>
+      <member refid="structcommand__line_1ac35a3b63e08d29c8c1b0673eb9709f90" prot="public" virt="non-virtual"><scope>command_line</scope><name>stdout_pipe</name></member>
+      <member refid="structcommand__line_1a52e5481c7442ec614f2cf19c281668e3" prot="public" virt="non-virtual"><scope>command_line</scope><name>tokens</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

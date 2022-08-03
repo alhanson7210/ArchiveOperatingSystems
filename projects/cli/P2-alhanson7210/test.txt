@@ -1,0 +1,42 @@
+ls
+echo Command 388
+echo Command 389
+echo Command 390
+echo Command 391
+echo Command 392
+cat /etc/hostname
+echo Command 394
+echo Command 395
+echo Command 396
+echo Command 397
+echo Command 398
+echo Command 399
+echo Command 400
+echo Command 401
+echo Command 402
+echo Command 403
+echo Command 404
+echo Command 405
+who
+echo Command 407
+echo Command 408
+echo Command 409
+echo Command 410
+echo Command 411
+echo Command 412
+echo Command 413
+echo Command 414
+echo Command 415
+echo Command 416
+echo Command 417
+echo Command 418
+echo Command 419
+echo -----
+!ls
+!p
+!cat
+!w
+!un
+!e
+history
+pwd

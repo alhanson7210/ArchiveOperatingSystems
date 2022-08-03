@@ -1,0 +1,47 @@
+\hypertarget{built__in__commands_8c}{}\doxysection{built\+\_\+in\+\_\+commands.\+c File Reference}
+\label{built__in__commands_8c}\index{built\_in\_commands.c@{built\_in\_commands.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$pwd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}built\+\_\+in\+\_\+commands.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}history.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prompt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{built__in__commands_8c_a158cfec6014a96177d61179a25c82306}{handle\+\_\+built\+\_\+in\+\_\+command}} (char $\ast$command)
+\item 
+void \mbox{\hyperlink{built__in__commands_8c_a7663aa3a3385a569b3f4acf45f9f054d}{run\+\_\+command}} (char $\ast$command, char $\ast$delimeter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{built__in__commands_8c_a158cfec6014a96177d61179a25c82306}\label{built__in__commands_8c_a158cfec6014a96177d61179a25c82306}} 
+\index{built\_in\_commands.c@{built\_in\_commands.c}!handle\_built\_in\_command@{handle\_built\_in\_command}}
+\index{handle\_built\_in\_command@{handle\_built\_in\_command}!built\_in\_commands.c@{built\_in\_commands.c}}
+\doxysubsubsection{\texorpdfstring{handle\_built\_in\_command()}{handle\_built\_in\_command()}}
+{\footnotesize\ttfamily int handle\+\_\+built\+\_\+in\+\_\+command (\begin{DoxyParamCaption}\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & get line command \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{built__in__commands_8c_a7663aa3a3385a569b3f4acf45f9f054d}\label{built__in__commands_8c_a7663aa3a3385a569b3f4acf45f9f054d}} 
+\index{built\_in\_commands.c@{built\_in\_commands.c}!run\_command@{run\_command}}
+\index{run\_command@{run\_command}!built\_in\_commands.c@{built\_in\_commands.c}}
+\doxysubsubsection{\texorpdfstring{run\_command()}{run\_command()}}
+{\footnotesize\ttfamily void run\+\_\+command (\begin{DoxyParamCaption}\item[{char $\ast$}]{command,  }\item[{char $\ast$}]{delimeter }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & get line command \\
+\hline
+{\em delimeter} & token delimeter \\
+\hline
+\end{DoxyParams}

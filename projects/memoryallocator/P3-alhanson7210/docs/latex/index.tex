@@ -1,0 +1,223 @@
+See\+: \href{https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-3.html}{\texttt{ https\+://www.\+cs.\+usfca.\+edu/$\sim$mmalensek/cs326/assignments/project-\/3.\+html}}
+
+{\itshape Writer\+: Alex Hanson}
+
+University of San Francisco
+
+CS 326 Operating Systems\hypertarget{index_autotoc_md1}{}\doxysection{About This Project\+:}\label{index_autotoc_md1}
+{\itshape C\+R\+E\+A\+T\+I\+NG A M\+E\+M\+O\+RY A\+L\+L\+O\+C\+A\+T\+OR F\+OR M\+E\+M\+O\+RY M\+A\+N\+A\+G\+E\+M\+E\+NT F\+OR AN O\+P\+E\+R\+A\+T\+I\+NG S\+Y\+S\+T\+EM BY U\+S\+I\+NG OR C\+R\+E\+A\+T\+I\+NG T\+HE N\+E\+C\+E\+S\+S\+A\+RY S\+Y\+S\+T\+EM C\+A\+L\+LS TO A\+L\+L\+O\+C\+A\+TE A\+ND F\+R\+EE M\+E\+M\+O\+RY A\+C\+C\+O\+R\+D\+I\+N\+G\+LY}
+
+{\itshape Memory Allocator} \begin{quote}
+The program allocates a page of space or reuses a given block of pre-\/allocated memory that the user will use based of a given request size which will also have the \mbox{\hyperlink{structmem__block}{mem\+\_\+block}} attached before that allocated memory request \end{quote}
+
+
+{\itshape Managing Memory} \begin{quote}
+In order to keep track of memory when a user wants to free or malloc memory(et al) is done by have a linked list of memory that memory blocks get added or deleted from. First fit\+: looks for the first block size that fits the memory request Best fit\+: looks for the minimum block size that fits the memory request Worst fit\+: looks for the maximum block size that fits the memory request ~\newline
+ \end{quote}
+
+
+{\itshape Allocating Memory} \begin{quote}
+M\+M\+AP is used to allocate memory more flexibly than sbrk or brk, but it also requires more parameters to be filled. Overflow is checked in calloc, M\+\_\+\+M\+M\+A\+P\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD is is checked for in malloc, and E\+N\+O\+M\+EM can additional handled in realloc, and lastly you can check for S\+I\+Z\+E\+\_\+\+M\+AX if a memory request is too large as well \end{quote}
+
+
+{\itshape Freeing Memory} \begin{quote}
+The way freeing is managed is by checking a block of memory to see if it is g\+\_\+head or not If it is, this requires going through the linked list and simultaneously checking the region for all its blocks having a usage of 0. If at any point the usage doesn\textquotesingle{}t equal zero, simply return; otherwise, the region actual has to be unmmapped. If it\textquotesingle{}s not g\+\_\+head, this requires finding the previous regions last block and the the next regions first block. If at any point the usage doesn\textquotesingle{}t equal zero, simply return; otherwise, the region actual has to be unmmapped as well. Depending on the case, g\+\_\+head or some other randomly placed block is unmapped, and the linked list is fixed in place \end{quote}
+
+
+{\itshape Reallocating Memory} \begin{quote}
+If the block can be resized in place, we can simply change the usage; otherwise we need to malloc space for a new block, copy the old one to the new, free the old one, and return the new \end{quote}
+
+
+{\itshape Basic Functionality Overview} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1. Simple allocator (one block per region)}
+\DoxyCodeLine{2. print\_memory() function}
+\DoxyCodeLine{3. Verified(correct) linked list sequence and visualization}
+\DoxyCodeLine{4. Scribbling}
+\DoxyCodeLine{5. Free space management algorithms}
+\end{DoxyCode}
+
+
+{\itshape Extra Features} \begin{quote}
+Named Blocks\+: to help with debugging, you can optionally provide a name for each allocation. These names will be shown when state information is printed. Memory State Information\+: your allocator should be able to print out the current state of the regions and blocks with the \mbox{\hyperlink{allocator_8c_a16e4f54f08fa2ef1574b413d64a94d44}{print\+\_\+memory()}} function. See the format below\+: File Logging\+: You should also be able to write the same contents printed by print\+\_\+memory to a file. Scribbling\+: \mbox{\hyperlink{allocator_8c_afbedc913aa4651b3c3b4b3aecd9b4711}{free()}} leaves old values in memory without cleaning them up. When the A\+L\+L\+O\+C\+A\+T\+O\+R\+\_\+\+S\+C\+R\+I\+B\+B\+LE environment variable is set to 1, you will fill any new allocation with 0x\+AA (10101010 in binary). This means that if a program assumes memory allocated by malloc is zeroed out, it will crash \end{quote}
+\hypertarget{index_autotoc_md2}{}\doxysection{Visualizations\+:}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/-\/ Current Memory State -\/-\/}
+\DoxyCodeLine{[REGION] 0x7fdb7f7cc000-\/0x7fdb7f7cd000 4096}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc000-\/0x7fdb7f7cc248 (0) 'Test Allocation: 0' 584 584 504}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc248-\/0x7fdb7f7cc4f0 (5) 'Test Allocation: 5' 680 680 600}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc4f0-\/0x7fdb7f7cc5d8 (6) 'Test Allocation: 6' 232 232 152}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc5d8-\/0x7fdb7f7cc680 (7) 'Test Allocation: 7' 168 136 56}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc680-\/0x7fdb7f7cc7d0 (2) 'Test Allocation: 2' 336 336 256}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc7d0-\/0x7fdb7f7cc948 (3) 'Test Allocation: 3' 376 0 0}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7cc948-\/0x7fdb7f7cd000 (4) 'Test Allocation: 4' 1720 584 504}
+\DoxyCodeLine{[REGION] 0x7fdb7f7a1000-\/0x7fdb7f7a3000 8192}
+\DoxyCodeLine{[BLOCK]  0x7fdb7f7a1000-\/0x7fdb7f7a3000 (8) 'mem\_block' 8192 4176 4096}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{Program Options\+:}\label{index_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{LD\_PRELOAD=\$(pwd)/allocator.so command}
+\DoxyCodeLine{}
+\DoxyCodeLine{allocation.h}
+\DoxyCodeLine{/* -\/-\/ Helper functions -\/-\/ */}
+\DoxyCodeLine{void print\_memory(void);}
+\DoxyCodeLine{void write\_memory(FILE * fp);}
+\DoxyCodeLine{void *reuse(size\_t size);}
+\DoxyCodeLine{void *malloc\_name(size\_t size, char * name);}
+\DoxyCodeLine{}
+\DoxyCodeLine{/* -\/-\/ C Memory API functions -\/-\/ */}
+\DoxyCodeLine{void *malloc(size\_t size);}
+\DoxyCodeLine{void free(void *ptr);}
+\DoxyCodeLine{void *calloc(size\_t nmemb, size\_t size);}
+\DoxyCodeLine{void *realloc(void *ptr, size\_t size);}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysection{Data Structures and Globals\+:}\label{index_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/**}
+\DoxyCodeLine{ * Defines metadata structure for both memory 'regions' and 'blocks.' This}
+\DoxyCodeLine{ * structure is prefixed before each allocation's data area.}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{struct mem\_block \{}
+\DoxyCodeLine{    /**}
+\DoxyCodeLine{     * Each allocation is given a unique ID number. If an allocation is split in}
+\DoxyCodeLine{     * two, then the resulting new block will be given a new ID.}
+\DoxyCodeLine{     */}
+\DoxyCodeLine{    unsigned long alloc\_id;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /**}
+\DoxyCodeLine{     * The name of this memory block. If the user doesn't specify a name for the}
+\DoxyCodeLine{     * block, it should be auto-\/generated based on the allocation ID.}
+\DoxyCodeLine{     */}
+\DoxyCodeLine{    char name[32];}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /** Size of the memory region */}
+\DoxyCodeLine{    size\_t size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /** Space used; if usage == 0, then the block has been freed. */}
+\DoxyCodeLine{    size\_t usage;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /**}
+\DoxyCodeLine{     * Pointer to the start of the mapped memory region. This simplifies the}
+\DoxyCodeLine{     * process of finding where memory mappings begin.}
+\DoxyCodeLine{     */}
+\DoxyCodeLine{    struct mem\_block *region\_start;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /**}
+\DoxyCodeLine{     * If this block is the beginning of a mapped memory region, the region\_size}
+\DoxyCodeLine{     * member indicates the size of the mapping. In subsequent (split) blocks,}
+\DoxyCodeLine{     * this is undefined.}
+\DoxyCodeLine{     */}
+\DoxyCodeLine{    size\_t region\_size;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    /** Next block in the chain */}
+\DoxyCodeLine{    struct mem\_block *next;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{static struct mem\_block *g\_head = NULL; /*!< Start (head) of our linked list */}
+\DoxyCodeLine{static unsigned long g\_allocations = 0; /*!< Allocation counter */}
+\end{DoxyCode}
+
+
+To compile and use the allocator\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+\DoxyCodeLine{LD\_PRELOAD=\$(pwd)/allocator.so ls /}
+\end{DoxyCode}
+
+
+(in this example, the command {\ttfamily ls /} is run with the custom memory allocator instead of the default).
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so ls /}
+\DoxyCodeLine{bin  boot  dev  etc  home  lib  lib64  mnt  opt  proc  root  run  sbin  secret  srv  sys  tmp  usr  var}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysection{Testing}\label{index_autotoc_md5}
+To execute the test cases, use {\ttfamily make test}. To pull in updated test cases, run {\ttfamily make testupdate}. You can also run a specific test case instead of all of them\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ make test}
+\DoxyCodeLine{./tests/run\_tests}
+\DoxyCodeLine{Building test programs}
+\DoxyCodeLine{make[1]: Entering directory '/home/alhanson/projects/prj3/P3-\/alhanson7210/tests/progs'}
+\DoxyCodeLine{make[1]: Nothing to be done for 'all'.}
+\DoxyCodeLine{make[1]: Leaving directory '/home/alhanson/projects/prj3/P3-\/alhanson7210/tests/progs'}
+\DoxyCodeLine{Running Tests: (v9)}
+\DoxyCodeLine{ * 01 ls                   [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 02 Free                 [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 03 Basic First Fit      [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 04 Basic Best Fit       [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 05 Basic Worst Fit      [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 06 First Fit            [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 07 Best Fit             [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 08 Worst Fit            [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 09 Scribbling           [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 10 Thread Safety        [1 pts]  [ FAIL ]}
+\DoxyCodeLine{ * 11 print\_memory()       [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 12 write\_memory()       [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 13 Unix Utilities       [1 pts]  [ FAIL ]}
+\DoxyCodeLine{ * 15 Static Analysis      [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 16 Documentation        [1 pts]  [  OK  ]}
+\DoxyCodeLine{ * 17 Thanks for Trying    [1 pts]  [  OK  ]}
+\DoxyCodeLine{Execution complete. [14/16 pts] (87.5\%)}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysection{Program Output}\label{index_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so ls -\/lrt}
+\DoxyCodeLine{total 5332}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson     642 Nov  5 13:58 README.md}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson    2135 Nov  5 13:58 debug.h}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson    2053 Nov 20 02:53 allocator.h}
+\DoxyCodeLine{drwxr-\/xr-\/x 4 alhanson alhanson    4096 Nov 20 20:21 tests}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson   23688 Nov 20 22:06 allocator.c}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson     552 Nov 20 22:11 Makefile}
+\DoxyCodeLine{-\/rwxr-\/xr-\/x 1 alhanson alhanson   24432 Nov 20 22:11 allocator.so}
+\DoxyCodeLine{drwxr-\/xr-\/x 5 alhanson alhanson      42 Nov 20 22:11 docs}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson     595 Nov 20 22:11 test-\/memory-\/output-\/file.txt}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson 3062864 Nov 20 22:11 allocator.h.gch}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson 2258224 Nov 20 22:11 debug.h.gch}
+\DoxyCodeLine{-\/rwxr-\/xr-\/x 1 alhanson alhanson   29592 Nov 20 22:11 a.out}
+\DoxyCodeLine{-\/rw-\/r-\/-\/r-\/-\/ 1 alhanson alhanson   25461 Nov 20 22:11 test-\/output.md}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so free}
+\DoxyCodeLine{              total        used        free      shared  buff/cache   available}
+\DoxyCodeLine{Mem:        1008272       77156      807652         400      123464      797800}
+\DoxyCodeLine{Swap:             0           0           0}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so getconf PAGE\_SIZE}
+\DoxyCodeLine{4096}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so echo "code works, what!!!!!!!!!"}
+\DoxyCodeLine{LD\_PRELOAD=./allocator.so echo "code works, whatLD\_PRELOAD=./allocator.so getconf PAGE\_SIZELD\_PRELOAD=./allocator.so getconf PAGE\_SIZELD\_PRELOAD=./allocator.so getconf PAGE\_SIZELD\_PRELOAD=./allocator.so getconf PAGE\_SIZE!"}
+\DoxyCodeLine{code works, whatLD\_PRELOAD=./allocator.so getconf PAGE\_SIZELD\_PRELOAD=./allocator.so getconf PAGE\_SIZELD\_PRELOAD=./allocator.so getconf PAGE\_SIZELD\_PRELOAD=./allocator.so getconf PAGE\_SIZE!}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so ls /}
+\DoxyCodeLine{bin  boot  dev  etc  home  lib  lib64  mnt  opt  proc  root  run  sbin  secret  srv  sys  tmp  usr  var}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so ps}
+\DoxyCodeLine{  PID TTY          TIME CMD}
+\DoxyCodeLine{ 2673 pts/0    00:00:01 bash}
+\DoxyCodeLine{32137 pts/0    00:00:00 ps}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so touch power\_move.txt}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so ls}
+\DoxyCodeLine{allocator.c  allocator.h.gch  a.out    debug.h.gch  Makefile        README.md                    test-\/output.md}
+\DoxyCodeLine{allocator.h  allocator.so     debug.h  docs         power\_move.txt  test-\/memory-\/output-\/file.txt  tests}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so rm power\_move.txt}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$ LD\_PRELOAD=./allocator.so ls}
+\DoxyCodeLine{allocator.c  allocator.h  allocator.h.gch  allocator.so  a.out  debug.h  debug.h.gch  docs  Makefile  README.md  test-\/memory-\/output-\/file.txt  test-\/output.md  tests}
+\DoxyCodeLine{[alhanson@alhanson7210 P3-\/alhanson7210]\$}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{Running one or multiple cases\+:}\label{index_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Run all test cases:}
+\DoxyCodeLine{make test}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Run a specific test case:}
+\DoxyCodeLine{make test run=4}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Run a few specific test cases (4, 8, and 12 in this case):}
+\DoxyCodeLine{make test run='4 8 12'}
+\end{DoxyCode}
+ 

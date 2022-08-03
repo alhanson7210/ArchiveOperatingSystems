@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="prompt_8c" kind="file" language="C++">
+    <compoundname>prompt.c</compoundname>
+    <includes local="no">limits.h</includes>
+    <includes refid="prompt_8h" local="yes">prompt.h</includes>
+    <includes refid="string__functions_8h" local="yes">string_functions.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="1">
+        <label>prompt.c</label>
+        <link refid="prompt_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>prompt.h</label>
+        <link refid="prompt_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdlib.h</label>
+      </node>
+      <node id="9">
+        <label>string_functions.h</label>
+        <link refid="string__functions_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>limits.h</label>
+      </node>
+      <node id="10">
+        <label>string.h</label>
+      </node>
+      <node id="8">
+        <label>unistd.h</label>
+      </node>
+      <node id="4">
+        <label>signal.h</label>
+      </node>
+      <node id="6">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="prompt_8c_1aa9c8a939c2d31d6df304612e3e21d119" prot="public" static="no">
+        <name>CODES</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="10" column="9" bodyfile="prompt.c" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="prompt_8c_1a87fafbb81f65c92b81efe08e3a2165be" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int CMD</definition>
+        <argsstring></argsstring>
+        <name>CMD</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="11" column="14" bodyfile="prompt.c" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="prompt_8c_1af23edb2da0a1e809e6e4dcae8a252e61" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool newCode</definition>
+        <argsstring></argsstring>
+        <name>newCode</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="12" column="6" bodyfile="prompt.c" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="prompt_8c_1aada24ab0f5bbba555afe1420c16ac2f7" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char hostname[HOST_NAME_MAX]</definition>
+        <argsstring>[HOST_NAME_MAX]</argsstring>
+        <name>hostname</name>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="13" column="6" bodyfile="prompt.c" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="prompt_8c_1abc99aa2957ed9b8ef43bcbec1dc6e11f" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* login</definition>
+        <argsstring></argsstring>
+        <name>login</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="14" column="7" bodyfile="prompt.c" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="prompt_8c_1a7599d8f4861436650265e6cac2de7dd9" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tilda</definition>
+        <argsstring></argsstring>
+        <name>tilda</name>
+        <initializer>= &quot;~&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="15" column="13" bodyfile="prompt.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="prompt_8c_1a103c8ca9b794f9eb4cf0e1b84a7e01a7" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char codes[][CODES]</definition>
+        <argsstring>[][CODES]</argsstring>
+        <name>codes</name>
+        <initializer>= {
+	{ 0xf0, 0x9f, 0x98, 0x8e, 0},
+	{ 0xE2, 0x9C, 0x8B, 0xF0, 0x9F, 0x8F, 0xBE}
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="20" column="6" bodyfile="prompt.c" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="prompt_8c_1afc5c187b2450146b0e4a23e25880d2f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_shell_prompt</definition>
+        <argsstring>(char *shellname, int exitcode)</argsstring>
+        <name>print_shell_prompt</name>
+        <param>
+          <type>char *</type>
+          <declname>shellname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exitcode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shellname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>its your shellname </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitcode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error code </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="29" column="6" bodyfile="prompt.c" bodystart="29" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="prompt_8c_1ae06538b086d7b65c6a7914359b784075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setExitCode</definition>
+        <argsstring>(bool nc)</argsstring>
+        <name>setExitCode</name>
+        <param>
+          <type>bool</type>
+          <declname>nc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>new code </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="41" column="6" bodyfile="prompt.c" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="prompt_8c_1a2f1678a9daa287f607efb63e2c8f0494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool newExitCode</definition>
+        <argsstring>()</argsstring>
+        <name>newExitCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>new exit code? </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="49" column="6" bodyfile="prompt.c" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="prompt_8c_1a5264c4c8f06380867ad5162689fa2656" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void increment_cmd</definition>
+        <argsstring>()</argsstring>
+        <name>increment_cmd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>incremenet command number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="57" column="6" bodyfile="prompt.c" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="prompt_8c_1a20c310f2c828010479b38e95238a5a80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int get_cmd</definition>
+        <argsstring>()</argsstring>
+        <name>get_cmd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="prompt.c" line="62" column="14" bodyfile="prompt.c" bodystart="62" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>prompt that prints the shell </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="prompt_8h" kindref="compound">prompt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="string__functions_8h" kindref="compound">string_functions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*global<sp/>from<sp/>prompt.h*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CODES<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>CMD<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>newCode<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>hostname[HOST_NAME_MAX]<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>login<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>tilda<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;~&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">/*program<sp/>globals*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//char<sp/>shades[]<sp/>=<sp/>{<sp/>0xf0,<sp/>0x9f,<sp/>0x98,<sp/>0x8e,<sp/>0};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//char<sp/>hands[]<sp/>=<sp/>{<sp/>0xE2,<sp/>0x9C,<sp/>0x8B,<sp/>0xF0,<sp/>0x9F,<sp/>0x8F,<sp/>0xBE};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>codes[][CODES]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0xf0,<sp/>0x9f,<sp/>0x98,<sp/>0x8e,<sp/>0},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0xE2,<sp/>0x9C,<sp/>0x8B,<sp/>0xF0,<sp/>0x9F,<sp/>0x8F,<sp/>0xBE}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="prompt_8c_1afc5c187b2450146b0e4a23e25880d2f3" kindref="member">print_shell_prompt</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>shellname,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitcode)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(shellname,<sp/></highlight><highlight class="stringliteral">&quot;shellname&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>shellname<sp/>=<sp/><ref refid="string__functions_8c_1a6bbabf7089892c358ce039431b719ecc" kindref="member">get_shell_name</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="prompt_8c_1a2f1678a9daa287f607efb63e2c8f0494" kindref="member">newExitCode</ref>())<sp/><ref refid="prompt_8c_1ae06538b086d7b65c6a7914359b784075" kindref="member">setExitCode</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>gethostname(hostname,<sp/>HOST_NAME_MAX);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>login<sp/>=<sp/>getlogin();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n[%s]%s[%u]%s@%s:<sp/>&quot;</highlight><highlight class="normal">,<sp/>codes[exitcode],<sp/>shellname,<sp/>CMD,<sp/>login,<sp/>hostname);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="prompt_8c_1ae06538b086d7b65c6a7914359b784075" kindref="member">setExitCode</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>nc)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>newCode<sp/>=<sp/>nc;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="prompt_8c_1a2f1678a9daa287f607efb63e2c8f0494" kindref="member">newExitCode</ref>()</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(newCode<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)?<sp/>true<sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="prompt_8c_1a5264c4c8f06380867ad5162689fa2656" kindref="member">increment_cmd</ref>()<sp/>{<sp/>CMD++;<sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="prompt_8c_1a20c310f2c828010479b38e95238a5a80" kindref="member">get_cmd</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CMD;<sp/>}</highlight></codeline>
+    </programlisting>
+    <location file="prompt.c"/>
+  </compounddef>
+</doxygen>

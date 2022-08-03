@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structhistory__container" kind="struct" language="C++" prot="public">
+    <compoundname>history_container</compoundname>
+    <includes refid="history_8h" local="no">history.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structhistory__container_1a3624d664056f3469605fdd08a5a8b4c0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int history_container::entry_count</definition>
+        <argsstring></argsstring>
+        <name>entry_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="24" column="5" bodyfile="history.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhistory__container_1aec31b2097a6ce84f3e2fae742a3a5b36" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int history_container::head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="25" column="5" bodyfile="history.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhistory__container_1afcdb342904c9db80fa6fe109d12f0916" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int history_container::tail</definition>
+        <argsstring></argsstring>
+        <name>tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="26" column="5" bodyfile="history.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhistory__container_1a797c1443f138b05686b3a2be53278b47" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int history_container::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="27" column="5" bodyfile="history.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhistory__container_1a153d2c302ef4706fe7988f688631f0ec" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structhistory__entry" kindref="compound">history_entry</ref></type>
+        <definition>struct history_entry history_container::list[HIST_MAX]</definition>
+        <argsstring>[HIST_MAX]</argsstring>
+        <name>list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="27" column="5" bodyfile="history.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>history container </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>history_container</label>
+        <link refid="structhistory__container"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>history_entry</label>
+        <link refid="structhistory__entry"/>
+      </node>
+    </collaborationgraph>
+    <location file="history.h" line="23" column="24" bodyfile="history.h" bodystart="23" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structhistory__container_1a3624d664056f3469605fdd08a5a8b4c0" prot="public" virt="non-virtual"><scope>history_container</scope><name>entry_count</name></member>
+      <member refid="structhistory__container_1aec31b2097a6ce84f3e2fae742a3a5b36" prot="public" virt="non-virtual"><scope>history_container</scope><name>head</name></member>
+      <member refid="structhistory__container_1a153d2c302ef4706fe7988f688631f0ec" prot="public" virt="non-virtual"><scope>history_container</scope><name>list</name></member>
+      <member refid="structhistory__container_1a797c1443f138b05686b3a2be53278b47" prot="public" virt="non-virtual"><scope>history_container</scope><name>min</name></member>
+      <member refid="structhistory__container_1afcdb342904c9db80fa6fe109d12f0916" prot="public" virt="non-virtual"><scope>history_container</scope><name>tail</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

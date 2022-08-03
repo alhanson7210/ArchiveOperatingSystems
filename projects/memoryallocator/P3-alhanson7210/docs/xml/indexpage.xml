@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Project 3: Memory Allocator</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>See: <ulink url="https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-3.html">https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-3.html</ulink></para>
+<para><emphasis>Writer: Alex Hanson</emphasis></para>
+<para>University of San Francisco</para>
+<para>CS 326 Operating Systems</para>
+<sect1 id="index_1autotoc_md1">
+<title>About This Project:</title>
+<para><emphasis>CREATING A MEMORY ALLOCATOR FOR MEMORY MANAGEMENT FOR AN OPERATING SYSTEM BY USING OR CREATING THE NECESSARY SYSTEM CALLS TO ALLOCATE AND FREE MEMORY ACCORDINGLY</emphasis></para>
+<para><emphasis>Memory Allocator</emphasis> <blockquote><para>The program allocates a page of space or reuses a given block of pre-allocated memory that the user will use based of a given request size which will also have the <ref refid="structmem__block" kindref="compound">mem_block</ref> attached before that allocated memory request </para>
+</blockquote></para>
+<para><emphasis>Managing Memory</emphasis> <blockquote><para>In order to keep track of memory when a user wants to free or malloc memory(et al) is done by have a linked list of memory that memory blocks get added or deleted from. First fit: looks for the first block size that fits the memory request Best fit: looks for the minimum block size that fits the memory request Worst fit: looks for the maximum block size that fits the memory request <linebreak/>
+ </para>
+</blockquote></para>
+<para><emphasis>Allocating Memory</emphasis> <blockquote><para>MMAP is used to allocate memory more flexibly than sbrk or brk, but it also requires more parameters to be filled. Overflow is checked in calloc, M_MMAP_THRESHOLD is is checked for in malloc, and ENOMEM can additional handled in realloc, and lastly you can check for SIZE_MAX if a memory request is too large as well </para>
+</blockquote></para>
+<para><emphasis>Freeing Memory</emphasis> <blockquote><para>The way freeing is managed is by checking a block of memory to see if it is g_head or not If it is, this requires going through the linked list and simultaneously checking the region for all its blocks having a usage of 0. If at any point the usage doesn&apos;t equal zero, simply return; otherwise, the region actual has to be unmmapped. If it&apos;s not g_head, this requires finding the previous regions last block and the the next regions first block. If at any point the usage doesn&apos;t equal zero, simply return; otherwise, the region actual has to be unmmapped as well. Depending on the case, g_head or some other randomly placed block is unmapped, and the linked list is fixed in place </para>
+</blockquote></para>
+<para><emphasis>Reallocating Memory</emphasis> <blockquote><para>If the block can be resized in place, we can simply change the usage; otherwise we need to malloc space for a new block, copy the old one to the new, free the old one, and return the new </para>
+</blockquote></para>
+<para><emphasis>Basic Functionality Overview</emphasis> <programlisting><codeline><highlight class="normal">1.<sp/>Simple<sp/>allocator<sp/>(one<sp/>block<sp/>per<sp/>region)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>print_memory()<sp/>function</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Verified(correct)<sp/>linked<sp/>list<sp/>sequence<sp/>and<sp/>visualization</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Scribbling</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Free<sp/>space<sp/>management<sp/>algorithms</highlight></codeline>
+</programlisting></para>
+<para><emphasis>Extra Features</emphasis> <blockquote><para>Named Blocks: to help with debugging, you can optionally provide a name for each allocation. These names will be shown when state information is printed. Memory State Information: your allocator should be able to print out the current state of the regions and blocks with the <ref refid="allocator_8c_1a16e4f54f08fa2ef1574b413d64a94d44" kindref="member">print_memory()</ref> function. See the format below: File Logging: You should also be able to write the same contents printed by print_memory to a file. Scribbling: <ref refid="allocator_8c_1afbedc913aa4651b3c3b4b3aecd9b4711" kindref="member">free()</ref> leaves old values in memory without cleaning them up. When the ALLOCATOR_SCRIBBLE environment variable is set to 1, you will fill any new allocation with 0xAA (10101010 in binary). This means that if a program assumes memory allocated by malloc is zeroed out, it will crash </para>
+</blockquote></para>
+</sect1>
+<sect1 id="index_1autotoc_md2">
+<title>Visualizations:</title>
+<para><programlisting><codeline><highlight class="normal">--<sp/>Current<sp/>Memory<sp/>State<sp/>--</highlight></codeline>
+<codeline><highlight class="normal">[REGION]<sp/>0x7fdb7f7cc000-0x7fdb7f7cd000<sp/>4096</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc000-0x7fdb7f7cc248<sp/>(0)<sp/>&apos;Test<sp/>Allocation:<sp/>0&apos;<sp/>584<sp/>584<sp/>504</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc248-0x7fdb7f7cc4f0<sp/>(5)<sp/>&apos;Test<sp/>Allocation:<sp/>5&apos;<sp/>680<sp/>680<sp/>600</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc4f0-0x7fdb7f7cc5d8<sp/>(6)<sp/>&apos;Test<sp/>Allocation:<sp/>6&apos;<sp/>232<sp/>232<sp/>152</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc5d8-0x7fdb7f7cc680<sp/>(7)<sp/>&apos;Test<sp/>Allocation:<sp/>7&apos;<sp/>168<sp/>136<sp/>56</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc680-0x7fdb7f7cc7d0<sp/>(2)<sp/>&apos;Test<sp/>Allocation:<sp/>2&apos;<sp/>336<sp/>336<sp/>256</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc7d0-0x7fdb7f7cc948<sp/>(3)<sp/>&apos;Test<sp/>Allocation:<sp/>3&apos;<sp/>376<sp/>0<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7cc948-0x7fdb7f7cd000<sp/>(4)<sp/>&apos;Test<sp/>Allocation:<sp/>4&apos;<sp/>1720<sp/>584<sp/>504</highlight></codeline>
+<codeline><highlight class="normal">[REGION]<sp/>0x7fdb7f7a1000-0x7fdb7f7a3000<sp/>8192</highlight></codeline>
+<codeline><highlight class="normal">[BLOCK]<sp/><sp/>0x7fdb7f7a1000-0x7fdb7f7a3000<sp/>(8)<sp/>&apos;mem_block&apos;<sp/>8192<sp/>4176<sp/>4096</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md3">
+<title>Program Options:</title>
+<para><programlisting><codeline><highlight class="normal">LD_PRELOAD=$(pwd)/allocator.so<sp/>command</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">allocation.h</highlight></codeline>
+<codeline><highlight class="normal">/*<sp/>--<sp/>Helper<sp/>functions<sp/>--<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>print_memory(void);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>write_memory(FILE<sp/>*<sp/>fp);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>*reuse(size_t<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>*malloc_name(size_t<sp/>size,<sp/>char<sp/>*<sp/>name);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/*<sp/>--<sp/>C<sp/>Memory<sp/>API<sp/>functions<sp/>--<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>*malloc(size_t<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>free(void<sp/>*ptr);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>*calloc(size_t<sp/>nmemb,<sp/>size_t<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>*realloc(void<sp/>*ptr,<sp/>size_t<sp/>size);</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md4">
+<title>Data Structures and Globals:</title>
+<para><programlisting><codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Defines<sp/>metadata<sp/>structure<sp/>for<sp/>both<sp/>memory<sp/>&apos;regions&apos;<sp/>and<sp/>&apos;blocks.&apos;<sp/>This</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>structure<sp/>is<sp/>prefixed<sp/>before<sp/>each<sp/>allocation&apos;s<sp/>data<sp/>area.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">struct<sp/>mem_block<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Each<sp/>allocation<sp/>is<sp/>given<sp/>a<sp/>unique<sp/>ID<sp/>number.<sp/>If<sp/>an<sp/>allocation<sp/>is<sp/>split<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>two,<sp/>then<sp/>the<sp/>resulting<sp/>new<sp/>block<sp/>will<sp/>be<sp/>given<sp/>a<sp/>new<sp/>ID.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>unsigned<sp/>long<sp/>alloc_id;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>The<sp/>name<sp/>of<sp/>this<sp/>memory<sp/>block.<sp/>If<sp/>the<sp/>user<sp/>doesn&apos;t<sp/>specify<sp/>a<sp/>name<sp/>for<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>block,<sp/>it<sp/>should<sp/>be<sp/>auto-generated<sp/>based<sp/>on<sp/>the<sp/>allocation<sp/>ID.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>char<sp/>name[32];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**<sp/>Size<sp/>of<sp/>the<sp/>memory<sp/>region<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>size_t<sp/>size;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**<sp/>Space<sp/>used;<sp/>if<sp/>usage<sp/>==<sp/>0,<sp/>then<sp/>the<sp/>block<sp/>has<sp/>been<sp/>freed.<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>size_t<sp/>usage;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>Pointer<sp/>to<sp/>the<sp/>start<sp/>of<sp/>the<sp/>mapped<sp/>memory<sp/>region.<sp/>This<sp/>simplifies<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>process<sp/>of<sp/>finding<sp/>where<sp/>memory<sp/>mappings<sp/>begin.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct<sp/>mem_block<sp/>*region_start;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>If<sp/>this<sp/>block<sp/>is<sp/>the<sp/>beginning<sp/>of<sp/>a<sp/>mapped<sp/>memory<sp/>region,<sp/>the<sp/>region_size</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>member<sp/>indicates<sp/>the<sp/>size<sp/>of<sp/>the<sp/>mapping.<sp/>In<sp/>subsequent<sp/>(split)<sp/>blocks,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>this<sp/>is<sp/>undefined.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>size_t<sp/>region_size;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**<sp/>Next<sp/>block<sp/>in<sp/>the<sp/>chain<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>struct<sp/>mem_block<sp/>*next;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>struct<sp/>mem_block<sp/>*g_head<sp/>=<sp/>NULL;<sp/>/*!&lt;<sp/>Start<sp/>(head)<sp/>of<sp/>our<sp/>linked<sp/>list<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>unsigned<sp/>long<sp/>g_allocations<sp/>=<sp/>0;<sp/>/*!&lt;<sp/>Allocation<sp/>counter<sp/>*/</highlight></codeline>
+</programlisting></para>
+<para>To compile and use the allocator:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">LD_PRELOAD=$(pwd)/allocator.so<sp/>ls<sp/>/</highlight></codeline>
+</programlisting></para>
+<para>(in this example, the command <computeroutput>ls /</computeroutput> is run with the custom memory allocator instead of the default).</para>
+<para><programlisting><codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>ls<sp/>/</highlight></codeline>
+<codeline><highlight class="normal">bin<sp/><sp/>boot<sp/><sp/>dev<sp/><sp/>etc<sp/><sp/>home<sp/><sp/>lib<sp/><sp/>lib64<sp/><sp/>mnt<sp/><sp/>opt<sp/><sp/>proc<sp/><sp/>root<sp/><sp/>run<sp/><sp/>sbin<sp/><sp/>secret<sp/><sp/>srv<sp/><sp/>sys<sp/><sp/>tmp<sp/><sp/>usr<sp/><sp/>var</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md5">
+<title>Testing</title>
+<para>To execute the test cases, use <computeroutput>make test</computeroutput>. To pull in updated test cases, run <computeroutput>make testupdate</computeroutput>. You can also run a specific test case instead of all of them: <programlisting><codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>make<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">./tests/run_tests</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>test<sp/>programs</highlight></codeline>
+<codeline><highlight class="normal">make[1]:<sp/>Entering<sp/>directory<sp/>&apos;/home/alhanson/projects/prj3/P3-alhanson7210/tests/progs&apos;</highlight></codeline>
+<codeline><highlight class="normal">make[1]:<sp/>Nothing<sp/>to<sp/>be<sp/>done<sp/>for<sp/>&apos;all&apos;.</highlight></codeline>
+<codeline><highlight class="normal">make[1]:<sp/>Leaving<sp/>directory<sp/>&apos;/home/alhanson/projects/prj3/P3-alhanson7210/tests/progs&apos;</highlight></codeline>
+<codeline><highlight class="normal">Running<sp/>Tests:<sp/>(v9)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>01<sp/>ls<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>02<sp/>Free<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>03<sp/>Basic<sp/>First<sp/>Fit<sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>04<sp/>Basic<sp/>Best<sp/>Fit<sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>05<sp/>Basic<sp/>Worst<sp/>Fit<sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>06<sp/>First<sp/>Fit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>07<sp/>Best<sp/>Fit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>08<sp/>Worst<sp/>Fit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>09<sp/>Scribbling<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>10<sp/>Thread<sp/>Safety<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/>FAIL<sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>11<sp/>print_memory()<sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>12<sp/>write_memory()<sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>13<sp/>Unix<sp/>Utilities<sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/>FAIL<sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>15<sp/>Static<sp/>Analysis<sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>16<sp/>Documentation<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>17<sp/>Thanks<sp/>for<sp/>Trying<sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal">Execution<sp/>complete.<sp/>[14/16<sp/>pts]<sp/>(87.5%)</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md6">
+<title>Program Output</title>
+<para><programlisting><codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>ls<sp/>-lrt</highlight></codeline>
+<codeline><highlight class="normal">total<sp/>5332</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/><sp/>642<sp/>Nov<sp/><sp/>5<sp/>13:58<sp/>README.md</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/>2135<sp/>Nov<sp/><sp/>5<sp/>13:58<sp/>debug.h</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/>2053<sp/>Nov<sp/>20<sp/>02:53<sp/>allocator.h</highlight></codeline>
+<codeline><highlight class="normal">drwxr-xr-x<sp/>4<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/>4096<sp/>Nov<sp/>20<sp/>20:21<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/>23688<sp/>Nov<sp/>20<sp/>22:06<sp/>allocator.c</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/><sp/>552<sp/>Nov<sp/>20<sp/>22:11<sp/>Makefile</highlight></codeline>
+<codeline><highlight class="normal">-rwxr-xr-x<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/>24432<sp/>Nov<sp/>20<sp/>22:11<sp/>allocator.so</highlight></codeline>
+<codeline><highlight class="normal">drwxr-xr-x<sp/>5<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/><sp/><sp/>42<sp/>Nov<sp/>20<sp/>22:11<sp/>docs</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/><sp/><sp/>595<sp/>Nov<sp/>20<sp/>22:11<sp/>test-memory-output-file.txt</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/>3062864<sp/>Nov<sp/>20<sp/>22:11<sp/>allocator.h.gch</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/>2258224<sp/>Nov<sp/>20<sp/>22:11<sp/>debug.h.gch</highlight></codeline>
+<codeline><highlight class="normal">-rwxr-xr-x<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/>29592<sp/>Nov<sp/>20<sp/>22:11<sp/>a.out</highlight></codeline>
+<codeline><highlight class="normal">-rw-r--r--<sp/>1<sp/>alhanson<sp/>alhanson<sp/><sp/><sp/>25461<sp/>Nov<sp/>20<sp/>22:11<sp/>test-output.md</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>free</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>total<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>used<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free<sp/><sp/><sp/><sp/><sp/><sp/>shared<sp/><sp/>buff/cache<sp/><sp/><sp/>available</highlight></codeline>
+<codeline><highlight class="normal">Mem:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1008272<sp/><sp/><sp/><sp/><sp/><sp/><sp/>77156<sp/><sp/><sp/><sp/><sp/><sp/>807652<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>400<sp/><sp/><sp/><sp/><sp/><sp/>123464<sp/><sp/><sp/><sp/><sp/><sp/>797800</highlight></codeline>
+<codeline><highlight class="normal">Swap:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZE</highlight></codeline>
+<codeline><highlight class="normal">4096</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>echo<sp/>&quot;code<sp/>works,<sp/>what!!!!!!!!!&quot;</highlight></codeline>
+<codeline><highlight class="normal">LD_PRELOAD=./allocator.so<sp/>echo<sp/>&quot;code<sp/>works,<sp/>whatLD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZELD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZELD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZELD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZE!&quot;</highlight></codeline>
+<codeline><highlight class="normal">code<sp/>works,<sp/>whatLD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZELD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZELD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZELD_PRELOAD=./allocator.so<sp/>getconf<sp/>PAGE_SIZE!</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>ls<sp/>/</highlight></codeline>
+<codeline><highlight class="normal">bin<sp/><sp/>boot<sp/><sp/>dev<sp/><sp/>etc<sp/><sp/>home<sp/><sp/>lib<sp/><sp/>lib64<sp/><sp/>mnt<sp/><sp/>opt<sp/><sp/>proc<sp/><sp/>root<sp/><sp/>run<sp/><sp/>sbin<sp/><sp/>secret<sp/><sp/>srv<sp/><sp/>sys<sp/><sp/>tmp<sp/><sp/>usr<sp/><sp/>var</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>ps</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>PID<sp/>TTY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TIME<sp/>CMD</highlight></codeline>
+<codeline><highlight class="normal"><sp/>2673<sp/>pts/0<sp/><sp/><sp/><sp/>00:00:01<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">32137<sp/>pts/0<sp/><sp/><sp/><sp/>00:00:00<sp/>ps</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>touch<sp/>power_move.txt</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>ls</highlight></codeline>
+<codeline><highlight class="normal">allocator.c<sp/><sp/>allocator.h.gch<sp/><sp/>a.out<sp/><sp/><sp/><sp/>debug.h.gch<sp/><sp/>Makefile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>README.md<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>test-output.md</highlight></codeline>
+<codeline><highlight class="normal">allocator.h<sp/><sp/>allocator.so<sp/><sp/><sp/><sp/><sp/>debug.h<sp/><sp/>docs<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>power_move.txt<sp/><sp/>test-memory-output-file.txt<sp/><sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>rm<sp/>power_move.txt</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$<sp/>LD_PRELOAD=./allocator.so<sp/>ls</highlight></codeline>
+<codeline><highlight class="normal">allocator.c<sp/><sp/>allocator.h<sp/><sp/>allocator.h.gch<sp/><sp/>allocator.so<sp/><sp/>a.out<sp/><sp/>debug.h<sp/><sp/>debug.h.gch<sp/><sp/>docs<sp/><sp/>Makefile<sp/><sp/>README.md<sp/><sp/>test-memory-output-file.txt<sp/><sp/>test-output.md<sp/><sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">[alhanson@alhanson7210<sp/>P3-alhanson7210]$</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md7">
+<title>Running one or multiple cases:</title>
+<para><programlisting><codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>test<sp/>cases:</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>a<sp/>specific<sp/>test<sp/>case:</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test<sp/>run=4</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>a<sp/>few<sp/>specific<sp/>test<sp/>cases<sp/>(4,<sp/>8,<sp/>and<sp/>12<sp/>in<sp/>this<sp/>case):</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test<sp/>run=&apos;4<sp/>8<sp/>12&apos;</highlight></codeline>
+</programlisting> </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

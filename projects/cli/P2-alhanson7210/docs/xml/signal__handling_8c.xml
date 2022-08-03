@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="signal__handling_8c" kind="file" language="C++">
+    <compoundname>signal_handling.c</compoundname>
+    <includes refid="signal__handling_8h" local="yes">signal_handling.h</includes>
+    <includes refid="prompt_8h" local="yes">prompt.h</includes>
+    <includes refid="debug_8h" local="yes">debug.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="8">
+        <label>prompt.h</label>
+        <link refid="prompt_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>signal_handling.c</label>
+        <link refid="signal__handling_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>signal_handling.h</label>
+        <link refid="signal__handling_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>unistd.h</label>
+      </node>
+      <node id="3">
+        <label>signal.h</label>
+      </node>
+      <node id="5">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="signal__handling_8c_1ae8b5aa208ed037400d678de15ab9d54c" prot="public" static="no">
+        <name>SIGNAL_SIZE</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.c" line="8" column="9" bodyfile="signal_handling.c" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="signal__handling_8c_1a05ec23ea9e68706e210bd8f965beee10" prot="public" static="no">
+        <name>BUFFER</name>
+        <initializer>64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.c" line="9" column="9" bodyfile="signal_handling.c" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="signal__handling_8c_1a12f1280df7f570aba71e80f92c6030b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sigquithandler</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>sigquithandler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.c" line="14" column="6" bodyfile="signal_handling.c" bodystart="14" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="signal__handling_8c_1a77c0764b89e1cbfbb1f84f90e543bddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sigusr1handler</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>sigusr1handler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.c" line="25" column="6" bodyfile="signal_handling.c" bodystart="25" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="signal__handling_8c_1a7ebc86ed09e7f5b0c2283b6d623fd480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void siginthandler</definition>
+        <argsstring>(int signo)</argsstring>
+        <name>siginthandler</name>
+        <param>
+          <type>int</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>signal number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.c" line="37" column="6" bodyfile="signal_handling.c" bodystart="37" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="signal__handling_8c_1a381e36afdc09409374274eb435224b36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void create_signals</definition>
+        <argsstring>()</argsstring>
+        <name>create_signals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>create signals </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="signal_handling.c" line="52" column="6" bodyfile="signal_handling.c" bodystart="52" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="signal__handling_8h" kindref="compound">signal_handling.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="prompt_8h" kindref="compound">prompt.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="debug_8h" kindref="compound">debug.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIGNAL_SIZE<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUFFER<sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a12f1280df7f570aba71e80f92c6030b6" kindref="member">sigquithandler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;signal<sp/>exit<sp/>code<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>signo);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(signo);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a77c0764b89e1cbfbb1f84f90e543bddb" kindref="member">sigusr1handler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;signal<sp/>exit<sp/>code<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>signo);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(signo);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a7ebc86ed09e7f5b0c2283b6d623fd480" kindref="member">siginthandler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>signo)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(isatty(STDIN_FILENO))<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kindref="member">LOG</ref>(</highlight><highlight class="stringliteral">&quot;signal<sp/>exit<sp/>code<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>signo);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="prompt_8c_1ae06538b086d7b65c6a7914359b784075" kindref="member">setExitCode</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//print_shell_prompt(&quot;flash&quot;,<sp/>0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="signal__handling_8h_1a381e36afdc09409374274eb435224b36" kindref="member">create_signals</ref>()</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>signal(SIGQUIT,<sp/><ref refid="signal__handling_8h_1a12f1280df7f570aba71e80f92c6030b6" kindref="member">sigquithandler</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>signal(SIGUSR1,<sp/><ref refid="signal__handling_8h_1a77c0764b89e1cbfbb1f84f90e543bddb" kindref="member">sigusr1handler</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>signal(SIGINT,<sp/><ref refid="signal__handling_8h_1a7ebc86ed09e7f5b0c2283b6d623fd480" kindref="member">siginthandler</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="signal_handling.c"/>
+  </compounddef>
+</doxygen>

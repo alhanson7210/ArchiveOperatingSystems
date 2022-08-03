@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structhistory__entry" kind="struct" language="C++" prot="public">
+    <compoundname>history_entry</compoundname>
+    <includes refid="history_8h" local="no">history.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structhistory__entry_1a12f46d4cf6160a08d622bda1df1adb2d" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int history_entry::cmd_id</definition>
+        <argsstring></argsstring>
+        <name>cmd_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="14" column="18" bodyfile="history.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structhistory__entry_1a43c68efddfdc0115c2529ced142de305" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char history_entry::command[COMMAND_SIZE]</definition>
+        <argsstring>[COMMAND_SIZE]</argsstring>
+        <name>command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="history.h" line="17" column="10" bodyfile="history.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>history entry </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="history.h" line="13" column="20" bodyfile="history.h" bodystart="13" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structhistory__entry_1a12f46d4cf6160a08d622bda1df1adb2d" prot="public" virt="non-virtual"><scope>history_entry</scope><name>cmd_id</name></member>
+      <member refid="structhistory__entry_1a43c68efddfdc0115c2529ced142de305" prot="public" virt="non-virtual"><scope>history_entry</scope><name>command</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

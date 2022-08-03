@@ -1,0 +1,53 @@
+\hypertarget{redirection_8h}{}\doxysection{redirection.\+h File Reference}
+\label{redirection_8h}\index{redirection.h@{redirection.h}}
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcommand__line}{command\+\_\+line}}
+\begin{DoxyCompactList}\small\item\em command line struct \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{redirection_8h_a2aa1c4d6ebe65030391ec3c6bb4a11e2}{execute\+\_\+pipeline}} (struct \mbox{\hyperlink{structcommand__line}{command\+\_\+line}} $\ast$cmds)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{redirection_8h_a2aa1c4d6ebe65030391ec3c6bb4a11e2}\label{redirection_8h_a2aa1c4d6ebe65030391ec3c6bb4a11e2}} 
+\index{redirection.h@{redirection.h}!execute\_pipeline@{execute\_pipeline}}
+\index{execute\_pipeline@{execute\_pipeline}!redirection.h@{redirection.h}}
+\doxysubsubsection{\texorpdfstring{execute\_pipeline()}{execute\_pipeline()}}
+{\footnotesize\ttfamily void execute\+\_\+pipeline (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcommand__line}{command\+\_\+line}} $\ast$}]{cmds }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmds} & command line array for pipeline/redirection\\
+\hline
+{\em cmds} & array of commands \\
+\hline
+\end{DoxyParams}
+T\+O\+DO\+: design an algorithm that sets up a pipeline piece by piece. Solutions will probably either iterate over the pieces of the pipeline or work recursively. Imagine you have three commands in a pipeline\+:
+
+
+\begin{DoxyItemize}
+\item cat
+\item tr
+\item sed
+\end{DoxyItemize}
+
+Use \textquotesingle{}stdout\+\_\+pipe\textquotesingle{} to determine when you\textquotesingle{}ve reached the last command in the pipeline, and \textquotesingle{}stdout\+\_\+file\textquotesingle{} to decide whether the final result gets written to a file or the terminal.
+
+If we aren\textquotesingle{}t at the last command, then we need to set up a pipe for the current command\textquotesingle{}s output to go into. For example, let\textquotesingle{}s say our command is {\ttfamily cat file.\+txt}. We will create a pipe and have the stdout of the command directed to the pipe. Before running the next command, we\textquotesingle{}ll set up the stdin of the next process to come from the pipe, and execute\+\_\+pipeline will run whatever command comes next (for instance, `tr '\mbox{[}\+:upper\+:\mbox{]}\textquotesingle{} \textquotesingle{}\mbox{[}\+:lower\+:\mbox{]}\textquotesingle{}\`{}).
+
+Here\textquotesingle{}s some pseudocode to help\+:
+
+create a new pipe fork a new process if pid is the child\+: dup2 stdout to pipe\mbox{[}1\mbox{]} close pipe\mbox{[}0\mbox{]} execvp the command if pid is the parent\+: dup2 stdin to pipe\mbox{[}0\mbox{]} close pipe\mbox{[}1\mbox{]} move on to the next command in the pipeline
+
+The special case here is when there are no more commands left. In that case, you can simply execvp the command (no need to create another pipe). If you created a handler process in \mbox{\hyperlink{shell_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, then it will be replaced by this last call to execvp.

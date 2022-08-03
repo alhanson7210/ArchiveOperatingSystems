@@ -1,0 +1,75 @@
+\hypertarget{signal__handling_8c}{}\doxysection{signal\+\_\+handling.\+c File Reference}
+\label{signal__handling_8c}\index{signal\_handling.c@{signal\_handling.c}}
+{\ttfamily \#include \char`\"{}signal\+\_\+handling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prompt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{signal__handling_8c_ae8b5aa208ed037400d678de15ab9d54c}\label{signal__handling_8c_ae8b5aa208ed037400d678de15ab9d54c}} 
+\#define {\bfseries S\+I\+G\+N\+A\+L\+\_\+\+S\+I\+ZE}~3
+\item 
+\mbox{\Hypertarget{signal__handling_8c_a05ec23ea9e68706e210bd8f965beee10}\label{signal__handling_8c_a05ec23ea9e68706e210bd8f965beee10}} 
+\#define {\bfseries B\+U\+F\+F\+ER}~64
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{signal__handling_8c_a12f1280df7f570aba71e80f92c6030b6}{sigquithandler}} (int signo)
+\item 
+void \mbox{\hyperlink{signal__handling_8c_a77c0764b89e1cbfbb1f84f90e543bddb}{sigusr1handler}} (int signo)
+\item 
+void \mbox{\hyperlink{signal__handling_8c_a7ebc86ed09e7f5b0c2283b6d623fd480}{siginthandler}} (int signo)
+\item 
+void \mbox{\hyperlink{signal__handling_8c_a381e36afdc09409374274eb435224b36}{create\+\_\+signals}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{signal__handling_8h}{signal\+\_\+handling.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{signal__handling_8c_a381e36afdc09409374274eb435224b36}\label{signal__handling_8c_a381e36afdc09409374274eb435224b36}} 
+\index{signal\_handling.c@{signal\_handling.c}!create\_signals@{create\_signals}}
+\index{create\_signals@{create\_signals}!signal\_handling.c@{signal\_handling.c}}
+\doxysubsubsection{\texorpdfstring{create\_signals()}{create\_signals()}}
+{\footnotesize\ttfamily void create\+\_\+signals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{signal__handling_8c_a7ebc86ed09e7f5b0c2283b6d623fd480}\label{signal__handling_8c_a7ebc86ed09e7f5b0c2283b6d623fd480}} 
+\index{signal\_handling.c@{signal\_handling.c}!siginthandler@{siginthandler}}
+\index{siginthandler@{siginthandler}!signal\_handling.c@{signal\_handling.c}}
+\doxysubsubsection{\texorpdfstring{siginthandler()}{siginthandler()}}
+{\footnotesize\ttfamily void siginthandler (\begin{DoxyParamCaption}\item[{int}]{signo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em signo} & sig no \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{signal__handling_8c_a12f1280df7f570aba71e80f92c6030b6}\label{signal__handling_8c_a12f1280df7f570aba71e80f92c6030b6}} 
+\index{signal\_handling.c@{signal\_handling.c}!sigquithandler@{sigquithandler}}
+\index{sigquithandler@{sigquithandler}!signal\_handling.c@{signal\_handling.c}}
+\doxysubsubsection{\texorpdfstring{sigquithandler()}{sigquithandler()}}
+{\footnotesize\ttfamily void sigquithandler (\begin{DoxyParamCaption}\item[{int}]{signo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em signo} & sig no \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{signal__handling_8c_a77c0764b89e1cbfbb1f84f90e543bddb}\label{signal__handling_8c_a77c0764b89e1cbfbb1f84f90e543bddb}} 
+\index{signal\_handling.c@{signal\_handling.c}!sigusr1handler@{sigusr1handler}}
+\index{sigusr1handler@{sigusr1handler}!signal\_handling.c@{signal\_handling.c}}
+\doxysubsubsection{\texorpdfstring{sigusr1handler()}{sigusr1handler()}}
+{\footnotesize\ttfamily void sigusr1handler (\begin{DoxyParamCaption}\item[{int}]{signo }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em signo} & sig no \\
+\hline
+\end{DoxyParams}

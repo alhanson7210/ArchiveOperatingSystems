@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Project 4: Parallel File System Search</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>See project description here: <ulink url="https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-4.html">https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-4.html</ulink></para>
+<para><emphasis>Writer: Alex Hanson</emphasis></para>
+<para>University of San Francisco</para>
+<para>CS 326 Operating Systems</para>
+<sect1 id="index_1autotoc_md1">
+<title>About This Project:</title>
+</sect1>
+<sect1 id="index_1autotoc_md2">
+<title>Test Output</title>
+<para><programlisting><codeline><highlight class="normal">./tests/run_tests</highlight></codeline>
+<codeline><highlight class="normal">Running<sp/>Tests:<sp/>(v8)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>01<sp/>Arguments<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>02<sp/>Invalid<sp/>Thread<sp/>Count<sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>03<sp/>Invalid<sp/>Directory<sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>04<sp/>Basic<sp/>Search<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>05<sp/>Many<sp/>Terms<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>06<sp/>Whitespace<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/>FAIL<sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>07<sp/>Thread<sp/>Performance<sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>08<sp/>Exact<sp/>Match<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>09<sp/>Local<sp/>Filesystem<sp/><sp/><sp/><sp/><sp/>[2<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>10<sp/>Thread<sp/>Count<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[2<sp/>pts]<sp/><sp/>[<sp/>FAIL<sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>11<sp/>Static<sp/>Analysis<sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>12<sp/>Documentation<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>13<sp/>Leak<sp/>Check<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[1<sp/>pts]<sp/><sp/>[<sp/><sp/>OK<sp/><sp/>]</highlight></codeline>
+<codeline><highlight class="normal">Execution<sp/>complete.<sp/>[12/15<sp/>pts]<sp/>(80.0%)</highlight></codeline>
+</programlisting> </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.16">
+  <compound refid="debug_8h" kind="file"><name>debug.h</name>
+    <member refid="debug_8h_1ad72dbcf6d0153db1b8d8a58001feed83" kind="define"><name>DEBUG</name></member>
+    <member refid="debug_8h_1a792f9eb6a62648607f47b22644ad9707" kind="define"><name>DEBUG_COLOR</name></member>
+    <member refid="debug_8h_1ad86358bf19927183dd7b4ae215a29731" kind="define"><name>COLOR_RED</name></member>
+    <member refid="debug_8h_1a23c70d699a5a775bc2e1ebeb8603f630" kind="define"><name>COLOR_BLUE</name></member>
+    <member refid="debug_8h_1a17f760256046df23dd0ab46602f04d02" kind="define"><name>COLOR_RESET</name></member>
+    <member refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kind="define"><name>LOGP</name></member>
+    <member refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kind="define"><name>LOG</name></member>
+  </compound>
+  <compound refid="prep_8c" kind="file"><name>prep.c</name>
+    <member refid="prep_8c_1a369266c24eacffb87046522897a570d5" kind="define"><name>_GNU_SOURCE</name></member>
+    <member refid="prep_8c_1ae688d728e1acdfe5988c7db45d6f0166" kind="define"><name>PATH_MAX</name></member>
+    <member refid="prep_8c_1a1d8ebb4914c8e217d861f811b9532c8e" kind="define"><name>FILE_SIZE_MAX</name></member>
+    <member refid="prep_8c_1a951f2013d75f8111eccdeac318772223" kind="variable"><name>g_search_dir</name></member>
+    <member refid="prep_8c_1a2c4988137fce81b48cd55439099fea71" kind="variable"><name>g_exact</name></member>
+    <member refid="prep_8c_1a63892ddc1fc7686a214815e969ff6b2e" kind="variable"><name>g_num_terms</name></member>
+    <member refid="prep_8c_1a4f30c73d5f9c0beb8512ea9d524bac99" kind="variable"><name>g_search_terms</name></member>
+    <member refid="prep_8c_1aca68ebb9d327ec70320a6649153222ad" kind="variable"><name>main_thread</name></member>
+    <member refid="prep_8c_1a84365b0f701e1f4a7424d21046ae2d24" kind="function"><name>print_usage</name></member>
+    <member refid="prep_8c_1aea97d2b4430802af7266ce160d8a4bc1" kind="function"><name>recurse_directory</name></member>
+    <member refid="prep_8c_1a3e25a8ceb25b355820a7905b3eef171e" kind="function"><name>thread_parse_file</name></member>
+    <member refid="prep_8c_1a1844b61eeb30d0067c46bb7831d344b6" kind="function"><name>line_parser</name></member>
+    <member refid="prep_8c_1a454def7cc2e88f4cb958e0ba2d075e2c" kind="function"><name>case_sensitivity_matching</name></member>
+    <member refid="prep_8c_1a93c6e70cda8e30ff145945bf40d9bbf0" kind="function"><name>permission_decyper</name></member>
+    <member refid="prep_8c_1a2fe2381e1746d216d155846a1bd0c708" kind="function"><name>print_line_diagnostics</name></member>
+    <member refid="prep_8c_1aa683e089745eb3fb604ed3b9026701ad" kind="function"><name>next_token</name></member>
+    <member refid="prep_8c_1a9021f77ba2dc5d76889e9bf5d446818d" kind="function"><name>strip_line</name></member>
+    <member refid="prep_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

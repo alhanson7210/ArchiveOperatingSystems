@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="string__functions_8h" kind="file" language="C++">
+    <compoundname>string_functions.h</compoundname>
+    <includes local="no">signal.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">string.h</includes>
+    <includedby refid="built__in__commands_8c" local="yes">built_in_commands.c</includedby>
+    <includedby refid="history_8c" local="yes">history.c</includedby>
+    <includedby refid="prompt_8c" local="yes">prompt.c</includedby>
+    <includedby refid="shell_8c" local="yes">shell.c</includedby>
+    <includedby refid="string__functions_8c" local="yes">string_functions.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="1">
+        <label>string_functions.h</label>
+        <link refid="string__functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+      <node id="2">
+        <label>signal.h</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>prompt.c</label>
+        <link refid="prompt_8c"/>
+      </node>
+      <node id="6">
+        <label>string_functions.c</label>
+        <link refid="string__functions_8c"/>
+      </node>
+      <node id="1">
+        <label>string_functions.h</label>
+        <link refid="string__functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>built_in_commands.c</label>
+        <link refid="built__in__commands_8c"/>
+      </node>
+      <node id="5">
+        <label>shell.c</label>
+        <link refid="shell_8c"/>
+      </node>
+      <node id="3">
+        <label>history.c</label>
+        <link refid="history_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="string__functions_8h_1a6bbabf7089892c358ce039431b719ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* get_shell_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_shell_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get shell name</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return the name of the shell </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.h" line="17" column="7" bodyfile="string_functions.c" bodystart="67" bodyend="72" declfile="string_functions.h" declline="17" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8h_1a7bd40c974db4adfacc04da6bf4048c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* get_shell_command</definition>
+        <argsstring>()</argsstring>
+        <name>get_shell_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get shell command for interactive mode</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get shell command </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.h" line="22" column="7" bodyfile="string_functions.c" bodystart="77" bodyend="93" declfile="string_functions.h" declline="22" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8h_1a36cc4e6b1ce708ed7492ae0979b10bf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* next_token</definition>
+        <argsstring>(char **str_ptr, const char *delim)</argsstring>
+        <name>next_token</name>
+        <param>
+          <type>char **</type>
+          <declname>str_ptr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to tokenize </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delimeter</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Retrieves the next token from a string.</para>
+<para>Parameters: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str_ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:maintains context in the string, i.e., where the next token in the string will be. If the function returns token N, then str_ptr will be updated to point to token N+1. To initialize, declare a char * that points to the string being tokenized. The pointer will be updated after each successive call to next_token.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>:the set of characters to use as delimiters</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns: char pointer to the next token in the string. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.h" line="28" column="7" bodyfile="string_functions.c" bodystart="26" bodyend="62" declfile="string_functions.h" declline="28" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8h_1ac1b2066a7f1bffe395dd6490abbc1fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char **</type>
+        <definition>char** command_tokenizer</definition>
+        <argsstring>(char *command, char *delimeter)</argsstring>
+        <name>command_tokenizer</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delimeter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>shell command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimeter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string delimeter</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command to be tokenized to run for execvp and the <ref refid="structcommand__line" kindref="compound">command_line</ref> struct </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimeter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>tokenizing string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.h" line="34" column="7" bodyfile="string_functions.c" bodystart="125" bodyend="150" declfile="string_functions.h" declline="34" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8h_1a8229eeb94135e569abc255b314fe8d1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* get_script_command</definition>
+        <argsstring>()</argsstring>
+        <name>get_script_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>void</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get line function for shell</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>get</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>script command from stdin </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.h" line="39" column="7" bodyfile="string_functions.c" bodystart="98" bodyend="119" declfile="string_functions.h" declline="39" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="string__functions_8h_1ac85d98fc2a9182c19800d71149e782f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int pipe_command_tokenizer</definition>
+        <argsstring>(char *command, char **pipe_buffer, char *delimeter)</argsstring>
+        <name>pipe_command_tokenizer</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>pipe_buffer</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>delimeter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>shell command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipe_buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pipe commands </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delimeter</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>get line command </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipe_buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pipe command tokenizer buffer of commands </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimeter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string tokenizer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="string_functions.h" line="46" column="5" bodyfile="string_functions.c" bodystart="157" bodyend="176" declfile="string_functions.h" declline="46" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#ifndef<sp/>_STRING_FUNCTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_STRING_FUNCTIONS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8h_1a6bbabf7089892c358ce039431b719ecc" kindref="member">get_shell_name</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8h_1a7bd40c974db4adfacc04da6bf4048c50" kindref="member">get_shell_command</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8h_1a36cc4e6b1ce708ed7492ae0979b10bf5" kindref="member">next_token</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**str_ptr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*delim);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/><ref refid="string__functions_8h_1ac1b2066a7f1bffe395dd6490abbc1fb4" kindref="member">command_tokenizer</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>command,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>delimeter);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="string__functions_8h_1a8229eeb94135e569abc255b314fe8d1d" kindref="member">get_script_command</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="string__functions_8h_1ac85d98fc2a9182c19800d71149e782f5" kindref="member">pipe_command_tokenizer</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>command,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**<sp/>pipe_buffer,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>delimeter);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="string_functions.h"/>
+  </compounddef>
+</doxygen>

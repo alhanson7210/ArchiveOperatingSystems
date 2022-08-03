@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.16">
+  <compound refid="structcommand__line" kind="struct"><name>command_line</name>
+    <member refid="structcommand__line_1a52e5481c7442ec614f2cf19c281668e3" kind="variable"><name>tokens</name></member>
+    <member refid="structcommand__line_1ac35a3b63e08d29c8c1b0673eb9709f90" kind="variable"><name>stdout_pipe</name></member>
+    <member refid="structcommand__line_1a88de722aec2e9fdc3555d1392dda7533" kind="variable"><name>stdout_file</name></member>
+  </compound>
+  <compound refid="structhistory__container" kind="struct"><name>history_container</name>
+    <member refid="structhistory__container_1a3624d664056f3469605fdd08a5a8b4c0" kind="variable"><name>entry_count</name></member>
+    <member refid="structhistory__container_1aec31b2097a6ce84f3e2fae742a3a5b36" kind="variable"><name>head</name></member>
+    <member refid="structhistory__container_1afcdb342904c9db80fa6fe109d12f0916" kind="variable"><name>tail</name></member>
+    <member refid="structhistory__container_1a797c1443f138b05686b3a2be53278b47" kind="variable"><name>min</name></member>
+    <member refid="structhistory__container_1a153d2c302ef4706fe7988f688631f0ec" kind="variable"><name>list</name></member>
+  </compound>
+  <compound refid="structhistory__entry" kind="struct"><name>history_entry</name>
+    <member refid="structhistory__entry_1a12f46d4cf6160a08d622bda1df1adb2d" kind="variable"><name>cmd_id</name></member>
+    <member refid="structhistory__entry_1a43c68efddfdc0115c2529ced142de305" kind="variable"><name>command</name></member>
+  </compound>
+  <compound refid="background__jobs_8c" kind="file"><name>background_jobs.c</name>
+  </compound>
+  <compound refid="background__jobs_8h" kind="file"><name>background_jobs.h</name>
+  </compound>
+  <compound refid="built__in__commands_8c" kind="file"><name>built_in_commands.c</name>
+    <member refid="built__in__commands_8c_1a158cfec6014a96177d61179a25c82306" kind="function"><name>handle_built_in_command</name></member>
+    <member refid="built__in__commands_8c_1a7663aa3a3385a569b3f4acf45f9f054d" kind="function"><name>run_command</name></member>
+  </compound>
+  <compound refid="built__in__commands_8h" kind="file"><name>built_in_commands.h</name>
+    <member refid="built__in__commands_8h_1a158cfec6014a96177d61179a25c82306" kind="function"><name>handle_built_in_command</name></member>
+    <member refid="built__in__commands_8h_1a7663aa3a3385a569b3f4acf45f9f054d" kind="function"><name>run_command</name></member>
+  </compound>
+  <compound refid="debug_8h" kind="file"><name>debug.h</name>
+    <member refid="debug_8h_1ad72dbcf6d0153db1b8d8a58001feed83" kind="define"><name>DEBUG</name></member>
+    <member refid="debug_8h_1a792f9eb6a62648607f47b22644ad9707" kind="define"><name>DEBUG_COLOR</name></member>
+    <member refid="debug_8h_1ad86358bf19927183dd7b4ae215a29731" kind="define"><name>COLOR_RED</name></member>
+    <member refid="debug_8h_1a23c70d699a5a775bc2e1ebeb8603f630" kind="define"><name>COLOR_BLUE</name></member>
+    <member refid="debug_8h_1a17f760256046df23dd0ab46602f04d02" kind="define"><name>COLOR_RESET</name></member>
+    <member refid="debug_8h_1ac60a33fb6244dfed75a5aaab504b8968" kind="define"><name>LOGP</name></member>
+    <member refid="debug_8h_1a388edf12256bf73c3a8ee9734c3bd841" kind="define"><name>LOG</name></member>
+  </compound>
+  <compound refid="history_8c" kind="file"><name>history.c</name>
+    <member refid="history_8c_1a568c06b098e543854f4cfbe39cfb2d5a" kind="variable"><name>history_obj</name></member>
+    <member refid="history_8c_1a62a2e543c8465ebc8703b51f5f524230" kind="function"><name>run_prefix_command</name></member>
+    <member refid="history_8c_1a5e443eede2ecfe4e481323d5720c29ce" kind="function"><name>run_command_id</name></member>
+    <member refid="history_8c_1ae83222ccb1ce0364687ffcfa7ccc9165" kind="function"><name>run_last_history_command</name></member>
+    <member refid="history_8c_1a48f33865ecf0642bb0cda24f5dcd2999" kind="function"><name>print_history</name></member>
+    <member refid="history_8c_1a729b6b40a26723869b3eae734031262d" kind="function"><name>get_entry</name></member>
+    <member refid="history_8c_1ad5f38cfc6e4eefba99cec6ed43736529" kind="function"><name>set_entry</name></member>
+    <member refid="history_8c_1a2f2ebc3133789214dfe1abb847aacdfb" kind="function"><name>find_entry_idx</name></member>
+    <member refid="history_8c_1a3cad18c7fe07d48e4a16fbb6386c6b81" kind="function"><name>create_history_log</name></member>
+    <member refid="history_8c_1a4ceaa0f5c4a7c3129f380bc9324b778e" kind="function"><name>shift_entries</name></member>
+    <member refid="history_8c_1aae35c2dac5bf079545141c91002135a9" kind="function"><name>add_entry</name></member>
+  </compound>
+  <compound refid="history_8h" kind="file"><name>history.h</name>
+    <member refid="history_8h_1a9a2f1621bf644fcac0c99b80f9492942" kind="define"><name>HIST_MAX</name></member>
+    <member refid="history_8h_1a87738054f9a89f0ac29c6ee1fb7da08d" kind="define"><name>COMMAND_SIZE</name></member>
+    <member refid="history_8h_1a5e443eede2ecfe4e481323d5720c29ce" kind="function"><name>run_command_id</name></member>
+    <member refid="history_8h_1a62a2e543c8465ebc8703b51f5f524230" kind="function"><name>run_prefix_command</name></member>
+    <member refid="history_8h_1ae83222ccb1ce0364687ffcfa7ccc9165" kind="function"><name>run_last_history_command</name></member>
+    <member refid="history_8h_1a729b6b40a26723869b3eae734031262d" kind="function"><name>get_entry</name></member>
+    <member refid="history_8h_1ad5f38cfc6e4eefba99cec6ed43736529" kind="function"><name>set_entry</name></member>
+    <member refid="history_8h_1a2f2ebc3133789214dfe1abb847aacdfb" kind="function"><name>find_entry_idx</name></member>
+    <member refid="history_8h_1a3cad18c7fe07d48e4a16fbb6386c6b81" kind="function"><name>create_history_log</name></member>
+    <member refid="history_8h_1a48f33865ecf0642bb0cda24f5dcd2999" kind="function"><name>print_history</name></member>
+    <member refid="history_8h_1a4ceaa0f5c4a7c3129f380bc9324b778e" kind="function"><name>shift_entries</name></member>
+    <member refid="history_8h_1aae35c2dac5bf079545141c91002135a9" kind="function"><name>add_entry</name></member>
+  </compound>
+  <compound refid="prompt_8c" kind="file"><name>prompt.c</name>
+    <member refid="prompt_8c_1aa9c8a939c2d31d6df304612e3e21d119" kind="define"><name>CODES</name></member>
+    <member refid="prompt_8c_1a87fafbb81f65c92b81efe08e3a2165be" kind="variable"><name>CMD</name></member>
+    <member refid="prompt_8c_1af23edb2da0a1e809e6e4dcae8a252e61" kind="variable"><name>newCode</name></member>
+    <member refid="prompt_8c_1aada24ab0f5bbba555afe1420c16ac2f7" kind="variable"><name>hostname</name></member>
+    <member refid="prompt_8c_1abc99aa2957ed9b8ef43bcbec1dc6e11f" kind="variable"><name>login</name></member>
+    <member refid="prompt_8c_1a7599d8f4861436650265e6cac2de7dd9" kind="variable"><name>tilda</name></member>
+    <member refid="prompt_8c_1a103c8ca9b794f9eb4cf0e1b84a7e01a7" kind="variable"><name>codes</name></member>
+    <member refid="prompt_8c_1afc5c187b2450146b0e4a23e25880d2f3" kind="function"><name>print_shell_prompt</name></member>
+    <member refid="prompt_8c_1ae06538b086d7b65c6a7914359b784075" kind="function"><name>setExitCode</name></member>
+    <member refid="prompt_8c_1a2f1678a9daa287f607efb63e2c8f0494" kind="function"><name>newExitCode</name></member>
+    <member refid="prompt_8c_1a5264c4c8f06380867ad5162689fa2656" kind="function"><name>increment_cmd</name></member>
+    <member refid="prompt_8c_1a20c310f2c828010479b38e95238a5a80" kind="function"><name>get_cmd</name></member>
+  </compound>
+  <compound refid="prompt_8h" kind="file"><name>prompt.h</name>
+    <member refid="prompt_8h_1ac3146f1e9227301bb4aa518f4d336cee" kind="define"><name>BUFFERSIZE</name></member>
+    <member refid="prompt_8h_1afc5c187b2450146b0e4a23e25880d2f3" kind="function"><name>print_shell_prompt</name></member>
+    <member refid="prompt_8h_1a5264c4c8f06380867ad5162689fa2656" kind="function"><name>increment_cmd</name></member>
+    <member refid="prompt_8h_1a20c310f2c828010479b38e95238a5a80" kind="function"><name>get_cmd</name></member>
+    <member refid="prompt_8h_1a2cbf60c62b3078a14737d2c69af3a5d8" kind="function"><name>setExitCode</name></member>
+    <member refid="prompt_8h_1a2f1678a9daa287f607efb63e2c8f0494" kind="function"><name>newExitCode</name></member>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="redirection_8c" kind="file"><name>redirection.c</name>
+    <member refid="redirection_8c_1a2aa1c4d6ebe65030391ec3c6bb4a11e2" kind="function"><name>execute_pipeline</name></member>
+  </compound>
+  <compound refid="redirection_8h" kind="file"><name>redirection.h</name>
+    <member refid="redirection_8h_1a2aa1c4d6ebe65030391ec3c6bb4a11e2" kind="function"><name>execute_pipeline</name></member>
+  </compound>
+  <compound refid="scripting_8c" kind="file"><name>scripting.c</name>
+  </compound>
+  <compound refid="scripting_8h" kind="file"><name>scripting.h</name>
+  </compound>
+  <compound refid="shell_8c" kind="file"><name>shell.c</name>
+    <member refid="shell_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="signal__handling_8c" kind="file"><name>signal_handling.c</name>
+    <member refid="signal__handling_8c_1ae8b5aa208ed037400d678de15ab9d54c" kind="define"><name>SIGNAL_SIZE</name></member>
+    <member refid="signal__handling_8c_1a05ec23ea9e68706e210bd8f965beee10" kind="define"><name>BUFFER</name></member>
+    <member refid="signal__handling_8c_1a12f1280df7f570aba71e80f92c6030b6" kind="function"><name>sigquithandler</name></member>
+    <member refid="signal__handling_8c_1a77c0764b89e1cbfbb1f84f90e543bddb" kind="function"><name>sigusr1handler</name></member>
+    <member refid="signal__handling_8c_1a7ebc86ed09e7f5b0c2283b6d623fd480" kind="function"><name>siginthandler</name></member>
+    <member refid="signal__handling_8c_1a381e36afdc09409374274eb435224b36" kind="function"><name>create_signals</name></member>
+  </compound>
+  <compound refid="signal__handling_8h" kind="file"><name>signal_handling.h</name>
+    <member refid="signal__handling_8h_1a12f1280df7f570aba71e80f92c6030b6" kind="function"><name>sigquithandler</name></member>
+    <member refid="signal__handling_8h_1a77c0764b89e1cbfbb1f84f90e543bddb" kind="function"><name>sigusr1handler</name></member>
+    <member refid="signal__handling_8h_1a7ebc86ed09e7f5b0c2283b6d623fd480" kind="function"><name>siginthandler</name></member>
+    <member refid="signal__handling_8h_1a381e36afdc09409374274eb435224b36" kind="function"><name>create_signals</name></member>
+  </compound>
+  <compound refid="string__functions_8c" kind="file"><name>string_functions.c</name>
+    <member refid="string__functions_8c_1ac3146f1e9227301bb4aa518f4d336cee" kind="define"><name>BUFFERSIZE</name></member>
+    <member refid="string__functions_8c_1a8db90f3fa18fecca0c890f1d43437acc" kind="define"><name>COMMANDSIZE</name></member>
+    <member refid="string__functions_8c_1a36cc4e6b1ce708ed7492ae0979b10bf5" kind="function"><name>next_token</name></member>
+    <member refid="string__functions_8c_1a6bbabf7089892c358ce039431b719ecc" kind="function"><name>get_shell_name</name></member>
+    <member refid="string__functions_8c_1a7bd40c974db4adfacc04da6bf4048c50" kind="function"><name>get_shell_command</name></member>
+    <member refid="string__functions_8c_1a8229eeb94135e569abc255b314fe8d1d" kind="function"><name>get_script_command</name></member>
+    <member refid="string__functions_8c_1ac1b2066a7f1bffe395dd6490abbc1fb4" kind="function"><name>command_tokenizer</name></member>
+    <member refid="string__functions_8c_1ac85d98fc2a9182c19800d71149e782f5" kind="function"><name>pipe_command_tokenizer</name></member>
+  </compound>
+  <compound refid="string__functions_8h" kind="file"><name>string_functions.h</name>
+    <member refid="string__functions_8h_1a6bbabf7089892c358ce039431b719ecc" kind="function"><name>get_shell_name</name></member>
+    <member refid="string__functions_8h_1a7bd40c974db4adfacc04da6bf4048c50" kind="function"><name>get_shell_command</name></member>
+    <member refid="string__functions_8h_1a36cc4e6b1ce708ed7492ae0979b10bf5" kind="function"><name>next_token</name></member>
+    <member refid="string__functions_8h_1ac1b2066a7f1bffe395dd6490abbc1fb4" kind="function"><name>command_tokenizer</name></member>
+    <member refid="string__functions_8h_1a8229eeb94135e569abc255b314fe8d1d" kind="function"><name>get_script_command</name></member>
+    <member refid="string__functions_8h_1ac85d98fc2a9182c19800d71149e782f5" kind="function"><name>pipe_command_tokenizer</name></member>
+  </compound>
+  <compound refid="variable__expansion_8c" kind="file"><name>variable_expansion.c</name>
+  </compound>
+  <compound refid="variable__expansion_8h" kind="file"><name>variable_expansion.h</name>
+  </compound>
+  <compound refid="working__directory_8c" kind="file"><name>working_directory.c</name>
+  </compound>
+  <compound refid="working__directory_8h" kind="file"><name>working_directory.h</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

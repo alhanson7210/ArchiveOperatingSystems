@@ -1,0 +1,125 @@
+\hypertarget{string__functions_8h}{}\doxysection{string\+\_\+functions.\+h File Reference}
+\label{string__functions_8h}\index{string\_functions.h@{string\_functions.h}}
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{string__functions_8h_a6bbabf7089892c358ce039431b719ecc}{get\+\_\+shell\+\_\+name}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{string__functions_8h_a7bd40c974db4adfacc04da6bf4048c50}{get\+\_\+shell\+\_\+command}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{string__functions_8h_a36cc4e6b1ce708ed7492ae0979b10bf5}{next\+\_\+token}} (char $\ast$$\ast$str\+\_\+ptr, const char $\ast$delim)
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{string__functions_8h_ac1b2066a7f1bffe395dd6490abbc1fb4}{command\+\_\+tokenizer}} (char $\ast$command, char $\ast$delimeter)
+\item 
+char $\ast$ \mbox{\hyperlink{string__functions_8h_a8229eeb94135e569abc255b314fe8d1d}{get\+\_\+script\+\_\+command}} ()
+\item 
+int \mbox{\hyperlink{string__functions_8h_ac85d98fc2a9182c19800d71149e782f5}{pipe\+\_\+command\+\_\+tokenizer}} (char $\ast$command, char $\ast$$\ast$pipe\+\_\+buffer, char $\ast$delimeter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{string__functions_8h_ac1b2066a7f1bffe395dd6490abbc1fb4}\label{string__functions_8h_ac1b2066a7f1bffe395dd6490abbc1fb4}} 
+\index{string\_functions.h@{string\_functions.h}!command\_tokenizer@{command\_tokenizer}}
+\index{command\_tokenizer@{command\_tokenizer}!string\_functions.h@{string\_functions.h}}
+\doxysubsubsection{\texorpdfstring{command\_tokenizer()}{command\_tokenizer()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ command\+\_\+tokenizer (\begin{DoxyParamCaption}\item[{char $\ast$}]{command,  }\item[{char $\ast$}]{delimeter }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & shell command \\
+\hline
+{\em delimeter} & string delimeter\\
+\hline
+{\em command} & command to be tokenized to run for execvp and the \mbox{\hyperlink{structcommand__line}{command\+\_\+line}} struct \\
+\hline
+{\em delimeter} & tokenizing string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{string__functions_8h_a8229eeb94135e569abc255b314fe8d1d}\label{string__functions_8h_a8229eeb94135e569abc255b314fe8d1d}} 
+\index{string\_functions.h@{string\_functions.h}!get\_script\_command@{get\_script\_command}}
+\index{get\_script\_command@{get\_script\_command}!string\_functions.h@{string\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_script\_command()}{get\_script\_command()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+script\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & get line function for shell\\
+\hline
+{\em get} & script command from stdin \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{string__functions_8h_a7bd40c974db4adfacc04da6bf4048c50}\label{string__functions_8h_a7bd40c974db4adfacc04da6bf4048c50}} 
+\index{string\_functions.h@{string\_functions.h}!get\_shell\_command@{get\_shell\_command}}
+\index{get\_shell\_command@{get\_shell\_command}!string\_functions.h@{string\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_shell\_command()}{get\_shell\_command()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+shell\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & get shell command for interactive mode\\
+\hline
+{\em void} & get shell command \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{string__functions_8h_a6bbabf7089892c358ce039431b719ecc}\label{string__functions_8h_a6bbabf7089892c358ce039431b719ecc}} 
+\index{string\_functions.h@{string\_functions.h}!get\_shell\_name@{get\_shell\_name}}
+\index{get\_shell\_name@{get\_shell\_name}!string\_functions.h@{string\_functions.h}}
+\doxysubsubsection{\texorpdfstring{get\_shell\_name()}{get\_shell\_name()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+shell\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & get shell name\\
+\hline
+{\em void} & return the name of the shell \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{string__functions_8h_a36cc4e6b1ce708ed7492ae0979b10bf5}\label{string__functions_8h_a36cc4e6b1ce708ed7492ae0979b10bf5}} 
+\index{string\_functions.h@{string\_functions.h}!next\_token@{next\_token}}
+\index{next\_token@{next\_token}!string\_functions.h@{string\_functions.h}}
+\doxysubsubsection{\texorpdfstring{next\_token()}{next\_token()}}
+{\footnotesize\ttfamily char$\ast$ next\+\_\+token (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str\+\_\+ptr,  }\item[{const char $\ast$}]{delim }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+\_\+ptr} & string to tokenize \\
+\hline
+{\em delim} & delimeter\\
+\hline
+\end{DoxyParams}
+Retrieves the next token from a string.
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em str\+\_\+ptr} & \+:maintains context in the string, i.\+e., where the next token in the string will be. If the function returns token N, then str\+\_\+ptr will be updated to point to token N+1. To initialize, declare a char $\ast$ that points to the string being tokenized. The pointer will be updated after each successive call to next\+\_\+token.\\
+\hline
+{\em delim} & \+:the set of characters to use as delimiters\\
+\hline
+\end{DoxyParams}
+Returns\+: char pointer to the next token in the string. \mbox{\Hypertarget{string__functions_8h_ac85d98fc2a9182c19800d71149e782f5}\label{string__functions_8h_ac85d98fc2a9182c19800d71149e782f5}} 
+\index{string\_functions.h@{string\_functions.h}!pipe\_command\_tokenizer@{pipe\_command\_tokenizer}}
+\index{pipe\_command\_tokenizer@{pipe\_command\_tokenizer}!string\_functions.h@{string\_functions.h}}
+\doxysubsubsection{\texorpdfstring{pipe\_command\_tokenizer()}{pipe\_command\_tokenizer()}}
+{\footnotesize\ttfamily int pipe\+\_\+command\+\_\+tokenizer (\begin{DoxyParamCaption}\item[{char $\ast$}]{command,  }\item[{char $\ast$$\ast$}]{pipe\+\_\+buffer,  }\item[{char $\ast$}]{delimeter }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & shell command \\
+\hline
+{\em pipe\+\_\+buffer} & pipe commands \\
+\hline
+{\em delim} & delimeter\\
+\hline
+{\em command} & get line command \\
+\hline
+{\em pipe\+\_\+buffer} & pipe command tokenizer buffer of commands \\
+\hline
+{\em delimeter} & string tokenizer \\
+\hline
+\end{DoxyParams}

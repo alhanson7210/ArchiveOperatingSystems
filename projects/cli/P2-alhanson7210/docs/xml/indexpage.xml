@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Project 2: Command Line Shell</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>See: <ulink url="https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-2.html">https://www.cs.usfca.edu/~mmalensek/cs326/assignments/project-2.html</ulink> <emphasis>Writer: Alex Hanson</emphasis></para>
+<para>University of San Francisco</para>
+<para>CS326 Operating Systems</para>
+<sect1 id="index_1autotoc_md1">
+<title>About This Project:</title>
+<para><blockquote><para>The outermost layer of the operating system kernel is called the shell. In Unix-based systems, the shell is generally a command line interface. Most Linux distributions ship with bash as the default (there are several others: csh, ksh, sh, tcsh, zsh). In this project, what will be implementing is a shell. </para>
+</blockquote></para>
+</sect1>
+<sect1 id="index_1autotoc_md2">
+<title>Program options:</title>
+<para><programlisting><codeline><highlight class="normal">Upon<sp/>startup,<sp/>the<sp/>shell<sp/>will<sp/>print<sp/>its<sp/>prompt<sp/>and<sp/>wait<sp/>for<sp/>user<sp/>input.<sp/>The<sp/>shell<sp/>should<sp/>be<sp/>able<sp/>to<sp/>run<sp/>commands<sp/>in<sp/>both<sp/>the<sp/>current<sp/>directory<sp/>and<sp/>those<sp/>in<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">PATH<sp/>environment<sp/>variable.<sp/>Execvp<sp/>was<sp/>used<sp/>to<sp/>do<sp/>this.<sp/>To<sp/>run<sp/>a<sp/>command<sp/>in<sp/>the<sp/>current<sp/>directory,<sp/>you’ll<sp/>need<sp/>to<sp/>prefix<sp/>it<sp/>with<sp/>./<sp/>as<sp/>usual.<sp/>If<sp/>a<sp/>command<sp/>isn’t<sp/>found,<sp/>it<sp/>prints<sp/>an<sp/>error<sp/>message:</highlight></codeline>
+</programlisting></para>
+<para>To compile and run:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">./flash</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md3">
+<title>Program Output</title>
+<para><programlisting><codeline><highlight class="normal">Command<sp/>417</highlight></codeline>
+<codeline><highlight class="normal">Command<sp/>418</highlight></codeline>
+<codeline><highlight class="normal">Command<sp/>419</highlight></codeline>
+<codeline><highlight class="normal">-----</highlight></codeline>
+<codeline><highlight class="normal">background_jobs.c<sp/><sp/><sp/><sp/>built_in_commands.o<sp/><sp/>history.c<sp/><sp/>prompt.c<sp/><sp/><sp/>redirection.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>scripting.h<sp/><sp/><sp/><sp/>signal_handling.h<sp/><sp/><sp/>string_functions.o<sp/><sp/>variable_expansion.c</highlight></codeline>
+<codeline><highlight class="normal">background_jobs.h<sp/><sp/><sp/><sp/>debug.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>history.h<sp/><sp/>prompt.h<sp/><sp/><sp/>redirection.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shell.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>signal_handling.o<sp/><sp/><sp/>test-output.md<sp/><sp/>variable_expansion.h</highlight></codeline>
+<codeline><highlight class="normal">built_in_commands.c<sp/><sp/>docs<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>history.o<sp/><sp/>prompt.o<sp/><sp/><sp/>script_commands.txt<sp/><sp/>shell.o<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string_functions.c<sp/><sp/>tests<sp/><sp/><sp/><sp/><sp/><sp/><sp/>working_directory.c</highlight></codeline>
+<codeline><highlight class="normal">built_in_commands.h<sp/><sp/>flash<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Makefile<sp/><sp/><sp/>README.md<sp/><sp/>scripting.c<sp/><sp/><sp/><sp/><sp/><sp/>signal_handling.c<sp/><sp/>string_functions.h<sp/><sp/>test.txt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>working_directory.h</highlight></codeline>
+<codeline><highlight class="normal">execvp:<sp/>No<sp/>such<sp/>file<sp/>or<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">alhanson7210</highlight></codeline>
+<codeline><highlight class="normal">alhanson<sp/>pts/0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2019-11-02<sp/>09:08<sp/>(192.168.122.1)</highlight></codeline>
+<codeline><highlight class="normal">execvp:<sp/>No<sp/>such<sp/>file<sp/>or<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">-----</highlight></codeline>
+<codeline><highlight class="normal">0<sp/>ls</highlight></codeline>
+<codeline><highlight class="normal">1<sp/>echo<sp/>Command<sp/>388</highlight></codeline>
+<codeline><highlight class="normal">2<sp/>echo<sp/>Command<sp/>389</highlight></codeline>
+<codeline><highlight class="normal">3<sp/>echo<sp/>Command<sp/>390</highlight></codeline>
+<codeline><highlight class="normal">4<sp/>echo<sp/>Command<sp/>391</highlight></codeline>
+<codeline><highlight class="normal">5<sp/>echo<sp/>Command<sp/>392</highlight></codeline>
+<codeline><highlight class="normal">6<sp/>cat<sp/>/etc/hostname</highlight></codeline>
+<codeline><highlight class="normal">7<sp/>echo<sp/>Command<sp/>394</highlight></codeline>
+<codeline><highlight class="normal">8<sp/>echo<sp/>Command<sp/>395</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md4">
+<title>Testing</title>
+<para>To execute the test cases, use <computeroutput>make test</computeroutput>. To pull in updated test cases, run <computeroutput>make testupdate</computeroutput>. You can also run a specific test case instead of all of them:</para>
+<para><programlisting><codeline><highlight class="normal">#<sp/>Run<sp/>all<sp/>test<sp/>cases:</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>a<sp/>specific<sp/>test<sp/>case:</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test<sp/>run=4</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Run<sp/>a<sp/>few<sp/>specific<sp/>test<sp/>cases<sp/>(4,<sp/>8,<sp/>and<sp/>12<sp/>in<sp/>this<sp/>case):</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test<sp/>run=&apos;4<sp/>8<sp/>12&apos;</highlight></codeline>
+</programlisting> </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
